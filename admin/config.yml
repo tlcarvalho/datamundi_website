@@ -24,7 +24,7 @@ backend:
 logo_url: https://decapbridge.com/decapcms-with-bridge.svg
 
 # Add site links in Decap CMS (optional)
-site_url: https://6a4a6be8d5c6ca0008fd140a--flourishing-scone-b22ff9.netlify.app
+site_url: https://flourishing-scone-b22ff9.netlify.app/
 
 # Onde as imagens enviadas pelo painel são salvas
 media_folder: "assets/img"
