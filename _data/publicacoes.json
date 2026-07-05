@@ -2,51 +2,43 @@
   "lista": [
     {
       "tipo": "Artigo",
-      "titulo": "Redes de desinformação e polarização política: um estudo longitudinal do Twitter/X brasileiro (2020–2024)",
-      "autores": "Carvalho, M.; Ribeiro, T.; Souza, F.",
-      "revista": "Journalism & Mass Communication Quarterly",
-      "ano": "2026",
-      "doi": "10.1177/10776990261000001"
-    },
-    {
-      "tipo": "Relatório",
-      "titulo": "Índice de Transparência Algorítmica das Plataformas Digitais no Brasil — Edição 2025",
-      "autores": "DataMundi Lab",
-      "revista": "Relatório Técnico",
-      "ano": "2025",
-      "doi": null
+      "titulo": "Following the Trail of Words: Mapping the Trending Topics of Graduate Research in the Brazilian IR Scholarship (1987-2018)",
+      "autores": "Thales Carvalho, Vinicius Santos, Yulieth Martinez",
+      "revista": "Brazilian Political Science Review",
+      "ano": "2024",
+      "doi": "10.1590/1981-3821202400010002"
     },
     {
       "tipo": "Artigo",
-      "titulo": "Jornalismo de dados no Sul Global: desafios estruturais e oportunidades emergentes",
-      "autores": "Lima, A.; Ferreira, P.; Carvalho, M.",
-      "revista": "Journalism Practice",
-      "ano": "2025",
-      "doi": "10.1080/17512786.2025.0000001"
-    },
-    {
-      "tipo": "Livro",
-      "titulo": "Desinformação e Democracia: Uma Perspectiva Brasileira",
-      "autores": "Carvalho, M.; Lima, A.",
-      "revista": "Editora UFRJ",
-      "ano": "2024",
-      "doi": null
+      "titulo": "The Ukraine War and the Limits of Latin American Fence-Sitting",
+      "autores": "Luis Schenoni, Diego Leiva, Thales Carvalho",
+      "revista": "Bulletin of Latin American Research",
+      "ano": "2023",
+      "doi": "10.1111/blar.13574"
     },
     {
       "tipo": "Artigo",
-      "titulo": "Detecção automática de coordenação inautêntica em redes sociais",
-      "autores": "Souza, F.; Matos, L.; Carvalho, M.",
-      "revista": "Big Data & Society",
-      "ano": "2024",
-      "doi": "10.1177/20539517241000001"
+      "titulo": "International Clientelistic Networks: The Case of Venezuela at the United Nations General Assembly, 1999–2015",
+      "autores": "Thales Carvalho, Dawisson Belém Lopes",
+      "revista": "Latin American Politics and Society",
+      "ano": "2022",
+      "doi": "10.1017/lap.2022.11"
     },
     {
-      "tipo": "Relatório",
-      "titulo": "Monitoramento da desinformação nas eleições municipais brasileiras de 2024",
-      "autores": "DataMundi Lab",
-      "revista": "Relatório Técnico",
-      "ano": "2024",
-      "doi": null
+      "tipo": "Artigo",
+      "titulo": "‘Mind the Gap’: Assessing Differences between Brazilian and Mainstream IR Journals in Methodological Approaches",
+      "autores": "Thales Carvalho, João Paulo Nicolini Gabriel, Dawisson Belém Lopes",
+      "revista": "Contexto Internacional",
+      "ano": "2021",
+      "doi": "10.1590/S0102-8529.2019430300002 "
+    },
+    {
+      "tipo": "Artigo",
+      "titulo": "International Security Governance in Latin America: A Historical Assessment.",
+      "autores": "Thales Carvalho, David Mares",
+      "revista": "Oxford Research Encyclopedia of International Studies",
+      "ano": "2025",
+      "doi": "10.1093/acrefore/9780190846626.013.884"
     }
   ]
 }
