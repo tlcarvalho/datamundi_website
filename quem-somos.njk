@@ -36,7 +36,7 @@ permalink: /quem-somos/
         <div class="mgrid{% if g.grande %} lg{% endif %}">
           {% for m in g.membros %}
             <div class="mcard">
-              <div class="mfoto{% if g.grande %} lg{% endif %}">{{ m.nome | iniciais }}</div>
+              <div class="mfoto{% if g.grande %} lg{% endif %}">{% if m.foto %}<img src="{{ m.foto }}" alt="{{ m.nome }}" />{% else %}{{ m.nome | iniciais }}{% endif %}</div>
               <div>
                 <div class="mnome">{{ m.nome }}</div>
                 <div class="mcargo">{{ m.cargo }}</div>

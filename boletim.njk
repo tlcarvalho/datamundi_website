@@ -17,20 +17,21 @@ permalink: /boletim/
 
     <div class="bol-grid">
       <div>
-        <div class="kicker">{{ boletim.edicoesTitulo }}</div>
-        {% for ed in edicoes.lista %}
-          <div class="reveal" style="transition-delay: {{ loop.index0 * 70 }}ms">
+        <div class="kicker">{{ boletim.publicacoesTitulo }}</div>
+        {% for p in collections.post | reverse %}
+          <a class="reveal post-link" href="{{ p.url }}" style="transition-delay: {{ loop.index0 * 70 }}ms">
             <div class="edicao">
               <div class="ed-num">
-                <div class="mono neon">{{ ed.num }}</div>
-                <div class="mono dim">{{ ed.data }}</div>
+                <div class="mono neon">{{ p.date | dataBR }}</div>
               </div>
               <div>
-                <p>{{ ed.titulo }}</p>
-                <span class="ed-link">{{ boletim.lerEdicao }}</span>
+                <p>{{ p.data.titulo }}</p>
+                {% if p.data.autor %}<div class="post-autor mono">por {{ p.data.autor }}</div>{% endif %}
+                {% if p.data.resumo %}<div class="post-resumo">{{ p.data.resumo }}</div>{% endif %}
+                <span class="ed-link">{{ boletim.lerPublicacao }}</span>
               </div>
             </div>
-          </div>
+          </a>
         {% endfor %}
         <div class="kicker" style="margin-top: 44px">{{ boletim.incluiTitulo }}</div>
         <ul class="bol-lista">

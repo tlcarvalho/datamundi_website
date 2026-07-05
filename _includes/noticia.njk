@@ -1,0 +1,17 @@
+---
+layout: base.njk
+nav_key: noticias
+---
+<article class="page">
+  <div class="wrap artigo-wrap">
+    <a class="artigo-voltar" href="/noticias/">← Todas as notícias</a>
+    <div class="ncard-meta" style="margin-bottom: 20px">
+      <span class="tag">{{ tag }}</span>
+      <span class="mono-date">{{ date | dataBR }}</span>
+    </div>
+    <h1 class="h1" style="margin-bottom: 24px">{{ titulo }}</h1>
+    {% if resumo %}<p class="lead" style="margin-bottom: 36px">{{ resumo }}</p>{% endif %}
+    {% if imagem %}<img class="artigo-hero" src="{{ imagem }}" alt="{{ titulo }}" />{% endif %}
+    <div class="artigo">{{ content | safe }}</div>
+  </div>
+</article>

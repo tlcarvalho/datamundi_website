@@ -27,6 +27,15 @@ module.exports = function (eleventyConfig) {
     return String(n).padStart(2, "0");
   });
 
+  // Formata uma data ISO para o padrão "22 abr. 2026"
+  eleventyConfig.addFilter("dataBR", function (d) {
+    if (!d) return "";
+    var meses = ["jan.", "fev.", "mar.", "abr.", "mai.", "jun.", "jul.", "ago.", "set.", "out.", "nov.", "dez."];
+    var dt = (d instanceof Date) ? d : new Date(d);
+    if (isNaN(dt.getTime())) return String(d);
+    return String(dt.getUTCDate()).padStart(2, "0") + " " + meses[dt.getUTCMonth()] + " " + dt.getUTCFullYear();
+  });
+
   return {
     dir: {
       input: ".",

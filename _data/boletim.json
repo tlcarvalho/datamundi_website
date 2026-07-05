@@ -7,8 +7,8 @@
     { "rotulo": "Periodicidade", "valor": "Contínua" },
     { "rotulo": "Acesso", "valor": "Aberto e gratuito" }
   ],
-  "edicoesTitulo": "Edições recentes",
-  "lerEdicao": "Ler edição →",
+  "publicacoesTitulo": "Publicações recentes",
+  "lerPublicacao": "Ler publicação →",
   "incluiTitulo": "O boletim inclui",
   "incluiItens": [
     "Análises originais com base em dados",
@@ -19,7 +19,7 @@
   ],
   "form": {
     "titulo": "Assine o Boletim",
-    "subtitulo": "Acesso antecipado a novas edições. Gratuito, sem spam.",
+    "subtitulo": "Acesso antecipado às novas publicações. Gratuito, sem spam.",
     "labelNome": "Nome",
     "placeholderNome": "Seu nome completo",
     "labelEmail": "E-mail *",
@@ -38,6 +38,6 @@
     ],
     "botao": "Assinar o Boletim →",
     "sucessoTitulo": "Inscrição confirmada!",
-    "sucessoTexto": "Bem-vindo ao Boletim DataMundi. Você receberá a próxima edição assim que for publicada."
+    "sucessoTexto": "Bem-vindo ao Boletim DataMundi. Você receberá as novas publicações assim que forem lançadas."
   }
 }

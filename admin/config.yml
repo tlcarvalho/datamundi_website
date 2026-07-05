@@ -2,9 +2,8 @@
 # Define de onde o painel lê/grava o conteúdo e quais campos cada arquivo tem.
 
 backend:
-  name: git-gateway
-  repo: tlcarvalho/datamundi_website
-  branch: main
+  name: git-gateway      # usa o Netlify Identity + Git Gateway
+  branch: main           # ajuste se sua branch principal tiver outro nome
   identity_url: https://auth.decapbridge.com/sites/4e64ba93-edf4-4ffe-96d7-560f5b54315a
   gateway_url: https://gateway.decapbridge.com
 
@@ -24,9 +23,9 @@ logo_url: https://decapbridge.com/decapcms-with-bridge.svg
 media_folder: "assets/img"
 public_folder: "/assets/img"
 
-# Idioma, URL do site e modo de publicação
+# Idioma e mensagem de commit
 locale: "pt"
-site_url: "https://flourishing-scone-b22ff9.netlify.app"
+site_url: "/"
 publish_mode: simple
 
 collections:
@@ -173,8 +172,8 @@ collections:
             fields:
               - { label: "Rótulo", name: "rotulo", widget: "string" }
               - { label: "Valor", name: "valor", widget: "string" }
-          - { label: "Título 'Edições recentes'", name: "edicoesTitulo", widget: "string" }
-          - { label: "Texto 'Ler edição'", name: "lerEdicao", widget: "string" }
+          - { label: "Título 'Publicações recentes'", name: "publicacoesTitulo", widget: "string" }
+          - { label: "Texto 'Ler publicação'", name: "lerPublicacao", widget: "string" }
           - { label: "Título 'O boletim inclui'", name: "incluiTitulo", widget: "string" }
           - label: "Itens 'O boletim inclui'"
             name: "incluiItens"
@@ -206,24 +205,8 @@ collections:
   # ─────────────────────────────────────────────
   - name: "conteudo"
     label: "Conteúdo"
-    description: "Notícias, publicações, linhas de pesquisa, equipe e edições do boletim."
+    description: "Publicações, linhas de pesquisa e equipe."
     files:
-      # ── noticias.json ──
-      - name: "noticias"
-        label: "Notícias"
-        file: "_data/noticias.json"
-        fields:
-          - label: "Notícias"
-            name: "lista"
-            widget: "list"
-            summary: "{{fields.titulo}}"
-            fields:
-              - { label: "Tag", name: "tag", widget: "string", hint: "Ex: Pesquisa, Evento, Parceria, Publicação" }
-              - { label: "Título", name: "titulo", widget: "string" }
-              - { label: "Resumo", name: "resumo", widget: "text" }
-              - { label: "Data", name: "data", widget: "string", hint: "Ex: 22 abr. 2026" }
-              - { label: "Imagem", name: "imagem", widget: "image", required: false, hint: "Opcional; deixe vazio para usar o espaço reservado" }
-
       # ── publicacoes.json ──
       - name: "publicacoes"
         label: "Publicações"
@@ -255,20 +238,6 @@ collections:
               - { label: "Título", name: "titulo", widget: "string" }
               - { label: "Descrição", name: "descricao", widget: "text" }
 
-      # ── edicoes.json ──
-      - name: "edicoes"
-        label: "Edições do Boletim"
-        file: "_data/edicoes.json"
-        fields:
-          - label: "Edições"
-            name: "lista"
-            widget: "list"
-            summary: "{{fields.titulo}}"
-            fields:
-              - { label: "Número", name: "num", widget: "string", hint: "Ex: v.1 n.3" }
-              - { label: "Título", name: "titulo", widget: "text" }
-              - { label: "Data", name: "data", widget: "string", hint: "Ex: Mar. 2026" }
-
       # ── equipe.json ──
       - name: "equipe"
         label: "Equipe"
@@ -289,4 +258,51 @@ collections:
                 fields:
                   - { label: "Nome", name: "nome", widget: "string" }
                   - { label: "Cargo", name: "cargo", widget: "string" }
+                  - { label: "Foto", name: "foto", widget: "image", required: false, hint: "Opcional; sem foto, mostra as iniciais do nome" }
                   - { label: "Áreas", name: "areas", widget: "string", required: false }
+
+  # ─────────────────────────────────────────────
+  # Notícias — cada notícia é uma página própria
+  # ─────────────────────────────────────────────
+  - name: "noticias"
+    label: "Notícias"
+    label_singular: "Notícia"
+    description: "Cada notícia vira uma página própria, aberta pelo botão 'Leia mais'."
+    folder: "noticias"
+    create: true
+    extension: "md"
+    format: "frontmatter"
+    identifier_field: "titulo"
+    slug: "{{slug}}"
+    summary: "{{titulo}}"
+    sortable_fields: ["date", "titulo"]
+    fields:
+      - { label: "Título", name: "titulo", widget: "string" }
+      - { label: "Tag", name: "tag", widget: "select", options: ["Pesquisa", "Evento", "Parceria", "Publicação"], default: "Pesquisa" }
+      - { label: "Data", name: "date", widget: "datetime", date_format: "DD/MM/YYYY", time_format: false, format: "YYYY-MM-DD" }
+      - { label: "Resumo (aparece no card)", name: "resumo", widget: "text" }
+      - { label: "Imagem de capa", name: "imagem", widget: "image", required: false, hint: "Opcional; deixe vazio para usar o espaço reservado" }
+      - { label: "Conteúdo completo", name: "body", widget: "markdown" }
+
+  # ─────────────────────────────────────────────
+  # Boletim — publicações contínuas (formato blog)
+  # ─────────────────────────────────────────────
+  - name: "boletim"
+    label: "Boletim (publicações)"
+    label_singular: "Publicação do Boletim"
+    description: "Publicações contínuas dos alunos. Cada uma vira uma página própria."
+    folder: "boletim"
+    create: true
+    extension: "md"
+    format: "frontmatter"
+    identifier_field: "titulo"
+    slug: "{{slug}}"
+    summary: "{{titulo}}"
+    sortable_fields: ["date", "titulo"]
+    fields:
+      - { label: "Título", name: "titulo", widget: "string" }
+      - { label: "Autor(a)", name: "autor", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime", date_format: "DD/MM/YYYY", time_format: false, format: "YYYY-MM-DD" }
+      - { label: "Resumo (aparece na lista)", name: "resumo", widget: "text" }
+      - { label: "Imagem de capa", name: "imagem", widget: "image", required: false }
+      - { label: "Conteúdo completo", name: "body", widget: "markdown" }

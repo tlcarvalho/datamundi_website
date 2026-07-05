@@ -22,21 +22,21 @@ filtros:
       {% endfor %}
     </div>
     <div class="ngrid" id="lista-noticias">
-      {% for n in noticias.lista %}
-        <div class="reveal" data-tag="{{ n.tag }}" style="transition-delay: {{ loop.index0 * 90 }}ms">
+      {% for n in collections.noticia | reverse %}
+        <a class="reveal ncard-link" href="{{ n.url }}" data-tag="{{ n.data.tag }}" style="transition-delay: {{ loop.index0 * 90 }}ms">
           <article class="ncard">
             <div class="ncard-img">
-              {% if n.imagem %}<img src="{{ n.imagem }}" alt="{{ n.titulo }}" />{% else %}<span class="mono-hint">imagem</span>{% endif %}
+              {% if n.data.imagem %}<img src="{{ n.data.imagem }}" alt="{{ n.data.titulo }}" />{% else %}<span class="mono-hint">imagem</span>{% endif %}
             </div>
             <div class="ncard-meta">
-              <span class="tag">{{ n.tag }}</span>
-              <span class="mono-date">{{ n.data }}</span>
+              <span class="tag">{{ n.data.tag }}</span>
+              <span class="mono-date">{{ n.date | dataBR }}</span>
             </div>
-            <h3>{{ n.titulo }}</h3>
-            <p>{{ n.resumo }}</p>
+            <h3>{{ n.data.titulo }}</h3>
+            <p>{{ n.data.resumo }}</p>
             <span class="ncard-more">Leia mais <span class="arr">→</span></span>
           </article>
-        </div>
+        </a>
       {% endfor %}
     </div>
   </div>
