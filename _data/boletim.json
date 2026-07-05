@@ -7,25 +7,25 @@
       "Estudante de pós-graduação",
       "Docente / Pesquisador",
       "Formulador de políticas públicas",
-      "Profissional de empresa",
+      "Profissional",
       "Jornalista",
       "Outro"
     ],
     "labelEmail": "E-mail *",
     "placeholderEmail": "seu@email.com",
-    "placeholderNome": "Seu nome completo",
+    "placeholderNome": "Nome",
     "labelNome": "Nome",
     "botao": "Assinar o Boletim →",
     "sucessoTexto": "Bem-vindo ao Boletim DataMundi. Você receberá as novas publicações assim que forem lançadas.",
     "labelInstituicao": "Instituição",
-    "subtitulo": "Acesso antecipado às novas publicações. Gratuito, sem spam.",
+    "subtitulo": "Tenha acesso antecipado às nossas publicações",
     "placeholderInstituicao": "Universidade / ministério / empresa",
     "titulo": "Assine o Boletim"
   },
   "meta": [
     {
       "rotulo": "ISSN",
-      "valor": "xxxx-xxxx (em processo)"
+      "valor": "(em processo)"
     },
     {
       "rotulo": "Periodicidade",
