@@ -1,9 +1,19 @@
 {
   "hero": {
-    "tituloLinhas": ["Dados que", "explicam", "o mundo."],
+    "tituloLinhas": [
+      "Dados que",
+      "explicam",
+      "o mundo."
+    ],
     "subtitulo": "O DataMundi é um laboratório de pesquisa une <strong>Ciência de Dados</strong> e <strong>Relações Internacionais</strong> para compreender a política internacional e seus diversos temas, como política externa e segurança.",
-    "ctaPrimario": { "texto": "Conheça o laboratório", "url": "/quem-somos/" },
-    "ctaSecundario": { "texto": "Publicações", "url": "/publicacoes/" }
+    "ctaPrimario": {
+      "texto": "Conheça o laboratório",
+      "url": "/quem-somos/"
+    },
+    "ctaSecundario": {
+      "texto": "Publicações",
+      "url": "/publicacoes/"
+    }
   },
   "ticker": [
     "Política Externa",
@@ -11,9 +21,9 @@
     "Opinião Pública",
     "Métodos Computacionais",
     "Análise de Redes",
-    "Diplomacia Digital",
+    "Texto como Dado",
     "Dados Abertos",
-    "Sistema Internacional"
+    "Rigor Analítico"
   ],
   "frentes": {
     "kicker": "O que fazemos",
@@ -33,9 +43,21 @@
   },
   "linhasKicker": "Linhas de pesquisa",
   "estatisticas": [
-    { "numero": 21, "sufixo": "", "rotulo": "Pesquisadores" },
-    { "numero": 6, "sufixo": "+", "rotulo": "Publicações em 2025" },
-    { "numero": 4, "sufixo": "", "rotulo": "Linhas de pesquisa" }
+    {
+      "numero": 21,
+      "sufixo": "",
+      "rotulo": "Pesquisadores"
+    },
+    {
+      "numero": 6,
+      "sufixo": "+",
+      "rotulo": "Publicações"
+    },
+    {
+      "numero": 0,
+      "sufixo": "",
+      "rotulo": "Linhas de pesquisa"
+    }
   ],
   "noticiasSecao": {
     "kicker": "Últimas",
@@ -48,9 +70,9 @@
     "verTodas": "Ver todas →"
   },
   "boletimCta": {
-    "kicker": "Newsletter",
+    "kicker": "Publicação",
     "titulo": "Boletim DataMundi",
-    "descricao": "Análises, pesquisas e eventos do lab na sua caixa de entrada. Quinzenal e gratuito.",
+    "descricao": "Pesquisas e Análises do DataMundi na sua caixa de entrada. ",
     "botao": "Assinar agora →"
   }
 }
