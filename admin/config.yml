@@ -1,0 +1,277 @@
+# Configuração do Decap CMS — DataMundi
+# Define de onde o painel lê/grava o conteúdo e quais campos cada arquivo tem.
+
+backend:
+  name: git-gateway      # usa o Netlify Identity + Git Gateway
+  branch: main           # ajuste se sua branch principal tiver outro nome
+
+# Onde as imagens enviadas pelo painel são salvas
+media_folder: "assets/img"
+public_folder: "/assets/img"
+
+# Idioma e mensagem de commit
+locale: "pt"
+site_url: "/"
+publish_mode: simple
+
+collections:
+  # ─────────────────────────────────────────────
+  # Páginas e configurações (arquivos únicos)
+  # ─────────────────────────────────────────────
+  - name: "config"
+    label: "Site & Páginas"
+    description: "Textos gerais do site, menu, rodapé e páginas."
+    files:
+      # ── site.json ──
+      - name: "site"
+        label: "Geral (menu, rodapé, contato)"
+        file: "_data/site.json"
+        fields:
+          - { label: "Nome do site", name: "nome", widget: "string" }
+          - { label: "Descrição no rodapé", name: "descricaoRodape", widget: "text" }
+          - { label: "Logo", name: "logo", widget: "image" }
+          - label: "Menu de navegação"
+            name: "nav"
+            widget: "list"
+            fields:
+              - { label: "Chave (interna)", name: "chave", widget: "string" }
+              - { label: "Rótulo", name: "rotulo", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+          - label: "Contato"
+            name: "contato"
+            widget: "object"
+            fields:
+              - { label: "E-mail", name: "email", widget: "string" }
+              - label: "Redes sociais"
+                name: "redes"
+                widget: "list"
+                fields:
+                  - { label: "Rótulo", name: "rotulo", widget: "string" }
+                  - { label: "URL", name: "url", widget: "string" }
+          - label: "Coluna 'Publicação' do rodapé"
+            name: "publicacaoRodape"
+            widget: "list"
+            field: { label: "Linha", name: "linha", widget: "string" }
+          - { label: "Copyright", name: "copyright", widget: "string" }
+          - { label: "Subtítulo do rodapé", name: "rodapeSubtitulo", widget: "string" }
+
+      # ── home.json ──
+      - name: "home"
+        label: "Página Inicial"
+        file: "_data/home.json"
+        fields:
+          - label: "Hero (topo)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - label: "Linhas do título"
+                name: "tituloLinhas"
+                widget: "list"
+                field: { label: "Linha", name: "linha", widget: "string" }
+              - { label: "Subtítulo (aceita HTML)", name: "subtitulo", widget: "text" }
+              - label: "Botão principal"
+                name: "ctaPrimario"
+                widget: "object"
+                fields:
+                  - { label: "Texto", name: "texto", widget: "string" }
+                  - { label: "URL", name: "url", widget: "string" }
+              - label: "Botão secundário"
+                name: "ctaSecundario"
+                widget: "object"
+                fields:
+                  - { label: "Texto", name: "texto", widget: "string" }
+                  - { label: "URL", name: "url", widget: "string" }
+          - label: "Ticker (faixa rolante)"
+            name: "ticker"
+            widget: "list"
+            field: { label: "Termo", name: "termo", widget: "string" }
+          - label: "Frentes"
+            name: "frentes"
+            widget: "object"
+            fields:
+              - { label: "Kicker", name: "kicker", widget: "string" }
+              - { label: "Título (aceita HTML)", name: "titulo", widget: "text" }
+              - label: "Cards"
+                name: "cards"
+                widget: "list"
+                fields:
+                  - { label: "Sigla", name: "sigla", widget: "string" }
+                  - { label: "Título", name: "titulo", widget: "string" }
+                  - { label: "Descrição", name: "descricao", widget: "text" }
+          - { label: "Kicker das linhas de pesquisa", name: "linhasKicker", widget: "string" }
+          - label: "Estatísticas"
+            name: "estatisticas"
+            widget: "list"
+            fields:
+              - { label: "Número", name: "numero", widget: "number", value_type: "int" }
+              - { label: "Sufixo", name: "sufixo", widget: "string", required: false }
+              - { label: "Rótulo", name: "rotulo", widget: "string" }
+          - label: "Seção Notícias (títulos)"
+            name: "noticiasSecao"
+            widget: "object"
+            fields:
+              - { label: "Kicker", name: "kicker", widget: "string" }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Link 'ver todas'", name: "verTodas", widget: "string" }
+          - label: "Seção Publicações (títulos)"
+            name: "publicacoesSecao"
+            widget: "object"
+            fields:
+              - { label: "Kicker", name: "kicker", widget: "string" }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Link 'ver todas'", name: "verTodas", widget: "string" }
+          - label: "Chamada do Boletim"
+            name: "boletimCta"
+            widget: "object"
+            fields:
+              - { label: "Kicker", name: "kicker", widget: "string" }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Descrição", name: "descricao", widget: "text" }
+              - { label: "Texto do botão", name: "botao", widget: "string" }
+
+      # ── quemsomos.json ──
+      - name: "quemsomos"
+        label: "Página: Quem Somos"
+        file: "_data/quemsomos.json"
+        fields:
+          - { label: "Kicker", name: "kicker", widget: "string" }
+          - { label: "Título", name: "titulo", widget: "string" }
+          - label: "Parágrafos (aceitam HTML)"
+            name: "paragrafos"
+            widget: "list"
+            field: { label: "Parágrafo", name: "paragrafo", widget: "text" }
+          - { label: "Título 'Linhas de pesquisa'", name: "linhasTitulo", widget: "string" }
+          - { label: "Kicker 'Pessoas'", name: "pessoasKicker", widget: "string" }
+          - { label: "Título 'Equipe'", name: "equipeTitulo", widget: "string" }
+
+      # ── boletim.json ──
+      - name: "boletim"
+        label: "Página: Boletim (textos e formulário)"
+        file: "_data/boletim.json"
+        fields:
+          - { label: "Kicker", name: "kicker", widget: "string" }
+          - { label: "Título", name: "titulo", widget: "string" }
+          - { label: "Lead", name: "lead", widget: "text" }
+          - label: "Metadados (ISSN, periodicidade...)"
+            name: "meta"
+            widget: "list"
+            fields:
+              - { label: "Rótulo", name: "rotulo", widget: "string" }
+              - { label: "Valor", name: "valor", widget: "string" }
+          - { label: "Título 'Edições recentes'", name: "edicoesTitulo", widget: "string" }
+          - { label: "Texto 'Ler edição'", name: "lerEdicao", widget: "string" }
+          - { label: "Título 'O boletim inclui'", name: "incluiTitulo", widget: "string" }
+          - label: "Itens 'O boletim inclui'"
+            name: "incluiItens"
+            widget: "list"
+            field: { label: "Item", name: "item", widget: "string" }
+          - label: "Formulário"
+            name: "form"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Subtítulo", name: "subtitulo", widget: "string" }
+              - { label: "Rótulo campo Nome", name: "labelNome", widget: "string" }
+              - { label: "Placeholder Nome", name: "placeholderNome", widget: "string" }
+              - { label: "Rótulo campo E-mail", name: "labelEmail", widget: "string" }
+              - { label: "Placeholder E-mail", name: "placeholderEmail", widget: "string" }
+              - { label: "Rótulo campo Instituição", name: "labelInstituicao", widget: "string" }
+              - { label: "Placeholder Instituição", name: "placeholderInstituicao", widget: "string" }
+              - { label: "Rótulo campo Perfil", name: "labelPerfil", widget: "string" }
+              - label: "Opções de perfil"
+                name: "opcoesPerfil"
+                widget: "list"
+                field: { label: "Opção", name: "opcao", widget: "string" }
+              - { label: "Texto do botão", name: "botao", widget: "string" }
+              - { label: "Título de sucesso", name: "sucessoTitulo", widget: "string" }
+              - { label: "Texto de sucesso", name: "sucessoTexto", widget: "text" }
+
+  # ─────────────────────────────────────────────
+  # Listas de conteúdo
+  # ─────────────────────────────────────────────
+  - name: "conteudo"
+    label: "Conteúdo"
+    description: "Notícias, publicações, linhas de pesquisa, equipe e edições do boletim."
+    files:
+      # ── noticias.json ──
+      - name: "noticias"
+        label: "Notícias"
+        file: "_data/noticias.json"
+        fields:
+          - label: "Notícias"
+            name: "lista"
+            widget: "list"
+            summary: "{{fields.titulo}}"
+            fields:
+              - { label: "Tag", name: "tag", widget: "string", hint: "Ex: Pesquisa, Evento, Parceria, Publicação" }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Resumo", name: "resumo", widget: "text" }
+              - { label: "Data", name: "data", widget: "string", hint: "Ex: 22 abr. 2026" }
+              - { label: "Imagem", name: "imagem", widget: "image", required: false, hint: "Opcional; deixe vazio para usar o espaço reservado" }
+
+      # ── publicacoes.json ──
+      - name: "publicacoes"
+        label: "Publicações"
+        file: "_data/publicacoes.json"
+        fields:
+          - label: "Publicações"
+            name: "lista"
+            widget: "list"
+            summary: "{{fields.titulo}}"
+            fields:
+              - { label: "Tipo", name: "tipo", widget: "string", hint: "Ex: Artigo, Relatório, Livro" }
+              - { label: "Título", name: "titulo", widget: "text" }
+              - { label: "Autores", name: "autores", widget: "string" }
+              - { label: "Revista / Editora", name: "revista", widget: "string" }
+              - { label: "Ano", name: "ano", widget: "string" }
+              - { label: "DOI (URL ou vazio)", name: "doi", widget: "string", required: false }
+
+      # ── linhas.json ──
+      - name: "linhas"
+        label: "Linhas de pesquisa"
+        file: "_data/linhas.json"
+        fields:
+          - label: "Linhas"
+            name: "lista"
+            widget: "list"
+            summary: "{{fields.titulo}}"
+            fields:
+              - { label: "Número", name: "n", widget: "string", hint: "Ex: 01" }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Descrição", name: "descricao", widget: "text" }
+
+      # ── edicoes.json ──
+      - name: "edicoes"
+        label: "Edições do Boletim"
+        file: "_data/edicoes.json"
+        fields:
+          - label: "Edições"
+            name: "lista"
+            widget: "list"
+            summary: "{{fields.titulo}}"
+            fields:
+              - { label: "Número", name: "num", widget: "string", hint: "Ex: v.1 n.3" }
+              - { label: "Título", name: "titulo", widget: "text" }
+              - { label: "Data", name: "data", widget: "string", hint: "Ex: Mar. 2026" }
+
+      # ── equipe.json ──
+      - name: "equipe"
+        label: "Equipe"
+        file: "_data/equipe.json"
+        fields:
+          - label: "Grupos"
+            name: "grupos"
+            widget: "list"
+            summary: "{{fields.rotulo}}"
+            fields:
+              - { label: "Chave (interna)", name: "chave", widget: "string" }
+              - { label: "Rótulo do grupo", name: "rotulo", widget: "string" }
+              - { label: "Cards maiores?", name: "grande", widget: "boolean", default: false }
+              - label: "Membros"
+                name: "membros"
+                widget: "list"
+                summary: "{{fields.nome}}"
+                fields:
+                  - { label: "Nome", name: "nome", widget: "string" }
+                  - { label: "Cargo", name: "cargo", widget: "string" }
+                  - { label: "Áreas", name: "areas", widget: "string", required: false }

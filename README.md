@@ -31,21 +31,47 @@ Você quase nunca precisa tocar no HTML/CSS. Todo o conteúdo editável fica em 
 Alguns textos específicos de uma página (como os filtros de Notícias/Publicações) ficam no
 **frontmatter** — o bloco entre `---` no topo dos arquivos `.njk`.
 
+> **Formato das listas:** `noticias.json`, `publicacoes.json`, `linhas.json` e `edicoes.json`
+> guardam seus itens dentro de uma chave `"lista"` — isso é necessário para que o painel
+> (Decap CMS) consiga editá-los. Mantenha esse formato.
+
 ### Estrutura do projeto
 ```
 v4/
+├── admin/                 ← painel de edição (Decap CMS)
+│   ├── index.html
+│   └── config.yml         ← define as coleções e os campos de cada arquivo
 ├── _includes/base.njk     ← cabeçalho, menu e rodapé (layout compartilhado)
 ├── _data/                 ← todo o conteúdo editável (arquivos .json)
 ├── assets/
 │   ├── css/style.css      ← estilos (design intocado)
 │   ├── js/main.js         ← interações (globo, animações, filtros, formulário)
 │   └── img/logo.png       ← imagens
+├── eleventy.config.cjs    ← configuração do Eleventy
 ├── index.njk              ← página inicial
 ├── quem-somos.njk
 ├── noticias.njk
 ├── publicacoes.njk
 └── boletim.njk
 ```
+
+---
+
+## Painel de edição (Decap CMS)
+
+O site inclui um painel em **`/admin`** onde qualquer pessoa autorizada edita o conteúdo pelo
+navegador — sem mexer em código. Cada alteração vira um commit no GitHub e o Netlify republica
+sozinho. Depois do deploy, acesse `https://SEU-SITE.netlify.app/admin/`.
+
+Para ativar o login (uma vez só, no painel do Netlify):
+1. **Site configuration → Identity → Enable Identity.**
+2. Em **Identity → Registration**, escolha *Invite only* (recomendado).
+3. Em **Identity → Services → Git Gateway**, clique em **Enable Git Gateway**.
+4. Em **Identity**, clique em **Invite users** e convide seu e-mail. Você recebe um link,
+   define a senha e já entra em `/admin/`.
+
+> A branch usada pelo painel é a `main` (veja `backend.branch` em `admin/config.yml`). Se sua
+> branch principal tiver outro nome, ajuste lá.
 
 ---
 

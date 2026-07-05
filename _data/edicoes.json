@@ -1,17 +1,19 @@
-[
-  {
-    "num": "v.1 n.3",
-    "titulo": "Desinformação climática no Brasil: padrões de propagação e atores-chave",
-    "data": "Mar. 2026"
-  },
-  {
-    "num": "v.1 n.2",
-    "titulo": "Transparência algorítmica: o que as plataformas (não) divulgam sobre seus sistemas de recomendação",
-    "data": "Fev. 2026"
-  },
-  {
-    "num": "v.1 n.1",
-    "titulo": "Ecossistemas informativos e polarização: um panorama do cenário brasileiro",
-    "data": "Jan. 2026"
-  }
-]
+{
+  "lista": [
+    {
+      "num": "v.1 n.3",
+      "titulo": "Desinformação climática no Brasil: padrões de propagação e atores-chave",
+      "data": "Mar. 2026"
+    },
+    {
+      "num": "v.1 n.2",
+      "titulo": "Transparência algorítmica: o que as plataformas (não) divulgam sobre seus sistemas de recomendação",
+      "data": "Fev. 2026"
+    },
+    {
+      "num": "v.1 n.1",
+      "titulo": "Ecossistemas informativos e polarização: um panorama do cenário brasileiro",
+      "data": "Jan. 2026"
+    }
+  ]
+}

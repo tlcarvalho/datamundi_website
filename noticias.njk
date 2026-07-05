@@ -22,7 +22,7 @@ filtros:
       {% endfor %}
     </div>
     <div class="ngrid" id="lista-noticias">
-      {% for n in noticias %}
+      {% for n in noticias.lista %}
         <div class="reveal" data-tag="{{ n.tag }}" style="transition-delay: {{ loop.index0 * 90 }}ms">
           <article class="ncard">
             <div class="ncard-img">

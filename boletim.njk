@@ -18,7 +18,7 @@ permalink: /boletim/
     <div class="bol-grid">
       <div>
         <div class="kicker">{{ boletim.edicoesTitulo }}</div>
-        {% for ed in edicoes %}
+        {% for ed in edicoes.lista %}
           <div class="reveal" style="transition-delay: {{ loop.index0 * 70 }}ms">
             <div class="edicao">
               <div class="ed-num">

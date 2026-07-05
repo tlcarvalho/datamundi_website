@@ -1,23 +1,25 @@
-[
-  {
-    "tag": "Pesquisa",
-    "titulo": "DataMundi lança plataforma de monitoramento de desinformação em tempo real",
-    "resumo": "Nova ferramenta combina processamento de linguagem natural e análise de redes para rastrear a propagação de narrativas falsas no ecossistema digital brasileiro.",
-    "data": "22 abr. 2026",
-    "imagem": ""
-  },
-  {
-    "tag": "Evento",
-    "titulo": "Lab participa do Congresso Internacional de Comunicação e Dados em Lisboa",
-    "resumo": "Pesquisadores do DataMundi apresentaram três trabalhos sobre transparência algorítmica e jornalismo de dados na conferência europeia.",
-    "data": "14 abr. 2026",
-    "imagem": ""
-  },
-  {
-    "tag": "Parceria",
-    "titulo": "DataMundi firma parceria com agência de fact-checking para análise automatizada",
-    "resumo": "Colaboração permitirá aplicar modelos de detecção de desinformação em fluxo contínuo de conteúdo das redes sociais.",
-    "data": "03 abr. 2026",
-    "imagem": ""
-  }
-]
+{
+  "lista": [
+    {
+      "tag": "Pesquisa",
+      "titulo": "DataMundi lança plataforma de monitoramento de desinformação em tempo real",
+      "resumo": "Nova ferramenta combina processamento de linguagem natural e análise de redes para rastrear a propagação de narrativas falsas no ecossistema digital brasileiro.",
+      "data": "22 abr. 2026",
+      "imagem": ""
+    },
+    {
+      "tag": "Evento",
+      "titulo": "Lab participa do Congresso Internacional de Comunicação e Dados em Lisboa",
+      "resumo": "Pesquisadores do DataMundi apresentaram três trabalhos sobre transparência algorítmica e jornalismo de dados na conferência europeia.",
+      "data": "14 abr. 2026",
+      "imagem": ""
+    },
+    {
+      "tag": "Parceria",
+      "titulo": "DataMundi firma parceria com agência de fact-checking para análise automatizada",
+      "resumo": "Colaboração permitirá aplicar modelos de detecção de desinformação em fluxo contínuo de conteúdo das redes sociais.",
+      "data": "03 abr. 2026",
+      "imagem": ""
+    }
+  ]
+}

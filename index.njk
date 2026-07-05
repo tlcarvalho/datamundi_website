@@ -60,7 +60,7 @@ permalink: /
   <div class="wrap">
     <div class="kicker reveal">{{ home.linhasKicker }}</div>
     <div class="linhas">
-      {% for l in linhas %}
+      {% for l in linhas.lista %}
         <div class="reveal" style="transition-delay: {{ loop.index0 * 80 }}ms">
           <div class="linha-row">
             <span class="linha-n">{{ l.n }}</span>
@@ -92,7 +92,7 @@ permalink: /
       <a class="btn-ghost sm" href="/noticias/">{{ home.noticiasSecao.verTodas }}</a>
     </div>
     <div class="ngrid">
-      {% for n in noticias %}
+      {% for n in noticias.lista %}
         {% if loop.index <= 3 %}
           <div class="reveal" style="transition-delay: {{ loop.index0 * 90 }}ms">
             <article class="ncard">
@@ -125,7 +125,7 @@ permalink: /
       <a class="btn-dark sm" href="/publicacoes/">{{ home.publicacoesSecao.verTodas }}</a>
     </div>
     <div>
-      {% for p in publicacoes %}
+      {% for p in publicacoes.lista %}
         {% if loop.index <= 3 %}
           <div class="reveal" style="transition-delay: {{ loop.index0 * 60 }}ms">
             <div class="pubrow light">

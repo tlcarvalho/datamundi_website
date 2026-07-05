@@ -21,7 +21,7 @@ filtros:
       {% endfor %}
     </div>
     <div id="lista-publicacoes">
-      {% for p in publicacoes %}
+      {% for p in publicacoes.lista %}
         <div class="reveal" data-tag="{{ p.tipo }}" style="transition-delay: {{ loop.index0 * 60 }}ms">
           <div class="pubrow">
             <span class="pub-tipo">{{ p.tipo }}</span>

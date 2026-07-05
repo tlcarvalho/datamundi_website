@@ -16,7 +16,7 @@ permalink: /quem-somos/
       </div>
       <div class="about-box">
         <h3 class="kicker">{{ quemsomos.linhasTitulo }}</h3>
-        {% for l in linhas %}
+        {% for l in linhas.lista %}
           <div class="about-linha">
             <span class="neon mono">{{ l.n }}</span>
             <span>{{ l.titulo }}</span>
