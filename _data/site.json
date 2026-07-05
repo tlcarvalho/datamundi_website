@@ -1,0 +1,27 @@
+{
+  "nome": "DataMundi",
+  "descricaoRodape": "Laboratório de Ciência de Dados em Relações Internacionais (DataMundi)",
+  "logo": "/assets/img/logo.png",
+  "nav": [
+    { "chave": "home", "rotulo": "Home", "url": "/" },
+    { "chave": "quem-somos", "rotulo": "Quem Somos", "url": "/quem-somos/" },
+    { "chave": "noticias", "rotulo": "Notícias", "url": "/noticias/" },
+    { "chave": "publicacoes", "rotulo": "Publicações", "url": "/publicacoes/" },
+    { "chave": "boletim", "rotulo": "Boletim", "url": "/boletim/" }
+  ],
+  "contato": {
+    "email": "datamundi.lab@gmail.com",
+    "redes": [
+      { "rotulo": "Instagram", "url": "#" },
+      { "rotulo": "Twitter / X", "url": "#" },
+      { "rotulo": "LinkedIn", "url": "#" }
+    ]
+  },
+  "publicacaoRodape": [
+    "Boletim DataMundi",
+    "ISSN xxxx-xxxx",
+    "Acesso aberto"
+  ],
+  "copyright": "© 2026 DataMundi. Todos os direitos reservados.",
+  "rodapeSubtitulo": "Laboratório de Ciência de Dados em Relações Internacionais"
+}

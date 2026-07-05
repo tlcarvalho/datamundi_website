@@ -1,0 +1,43 @@
+{
+  "kicker": "Publicação periódica",
+  "titulo": "Boletim DataMundi",
+  "lead": "Publicação científica em fluxo contínuo dedicada à apresentação de dados sobre o sistema internacional, política externa e opinião pública em linguagem acessível.",
+  "meta": [
+    { "rotulo": "ISSN", "valor": "xxxx-xxxx (em processo)" },
+    { "rotulo": "Periodicidade", "valor": "Contínua" },
+    { "rotulo": "Acesso", "valor": "Aberto e gratuito" }
+  ],
+  "edicoesTitulo": "Edições recentes",
+  "lerEdicao": "Ler edição →",
+  "incluiTitulo": "O boletim inclui",
+  "incluiItens": [
+    "Análises originais com base em dados",
+    "Linguagem acessível para não especialistas",
+    "Visualizações e infográficos",
+    "Referências e fontes abertas",
+    "Chamadas para pesquisa e colaboração"
+  ],
+  "form": {
+    "titulo": "Assine o Boletim",
+    "subtitulo": "Acesso antecipado a novas edições. Gratuito, sem spam.",
+    "labelNome": "Nome",
+    "placeholderNome": "Seu nome completo",
+    "labelEmail": "E-mail *",
+    "placeholderEmail": "seu@email.com",
+    "labelInstituicao": "Instituição",
+    "placeholderInstituicao": "Universidade / ministério / empresa",
+    "labelPerfil": "Perfil",
+    "opcoesPerfil": [
+      "Estudante de graduação",
+      "Estudante de pós-graduação",
+      "Docente / Pesquisador",
+      "Formulador de políticas públicas",
+      "Profissional de empresa",
+      "Jornalista",
+      "Outro"
+    ],
+    "botao": "Assinar o Boletim →",
+    "sucessoTitulo": "Inscrição confirmada!",
+    "sucessoTexto": "Bem-vindo ao Boletim DataMundi. Você receberá a próxima edição assim que for publicada."
+  }
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "tipo": "Artigo",
+    "titulo": "Redes de desinformação e polarização política: um estudo longitudinal do Twitter/X brasileiro (2020–2024)",
+    "autores": "Carvalho, M.; Ribeiro, T.; Souza, F.",
+    "revista": "Journalism & Mass Communication Quarterly",
+    "ano": "2026",
+    "doi": "10.1177/10776990261000001"
+  },
+  {
+    "tipo": "Relatório",
+    "titulo": "Índice de Transparência Algorítmica das Plataformas Digitais no Brasil — Edição 2025",
+    "autores": "DataMundi Lab",
+    "revista": "Relatório Técnico",
+    "ano": "2025",
+    "doi": null
+  },
+  {
+    "tipo": "Artigo",
+    "titulo": "Jornalismo de dados no Sul Global: desafios estruturais e oportunidades emergentes",
+    "autores": "Lima, A.; Ferreira, P.; Carvalho, M.",
+    "revista": "Journalism Practice",
+    "ano": "2025",
+    "doi": "10.1080/17512786.2025.0000001"
+  },
+  {
+    "tipo": "Livro",
+    "titulo": "Desinformação e Democracia: Uma Perspectiva Brasileira",
+    "autores": "Carvalho, M.; Lima, A.",
+    "revista": "Editora UFRJ",
+    "ano": "2024",
+    "doi": null
+  },
+  {
+    "tipo": "Artigo",
+    "titulo": "Detecção automática de coordenação inautêntica em redes sociais",
+    "autores": "Souza, F.; Matos, L.; Carvalho, M.",
+    "revista": "Big Data & Society",
+    "ano": "2024",
+    "doi": "10.1177/20539517241000001"
+  },
+  {
+    "tipo": "Relatório",
+    "titulo": "Monitoramento da desinformação nas eleições municipais brasileiras de 2024",
+    "autores": "DataMundi Lab",
+    "revista": "Relatório Técnico",
+    "ano": "2024",
+    "doi": null
+  }
+]

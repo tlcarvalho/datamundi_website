@@ -1,0 +1,38 @@
+---
+layout: base.njk
+nav_key: publicacoes
+titulo_pagina: Publicações
+permalink: /publicacoes/
+kicker: Produção científica
+titulo: Publicações
+filtros:
+  - Todos
+  - Artigo
+  - Relatório
+  - Livro
+---
+<div class="page">
+  <div class="wrap">
+    <div class="kicker reveal in">{{ kicker }}</div>
+    <h1 class="h1">{{ titulo }}</h1>
+    <div class="filtros" data-filtro-grupo="#lista-publicacoes">
+      {% for f in filtros %}
+        <button class="filtro{% if loop.first %} on{% endif %}" data-valor="{{ f }}">{{ f }}</button>
+      {% endfor %}
+    </div>
+    <div id="lista-publicacoes">
+      {% for p in publicacoes %}
+        <div class="reveal" data-tag="{{ p.tipo }}" style="transition-delay: {{ loop.index0 * 60 }}ms">
+          <div class="pubrow">
+            <span class="pub-tipo">{{ p.tipo }}</span>
+            <div class="pub-body">
+              <h3>{{ p.titulo }}</h3>
+              <div class="pub-meta">{{ p.autores }} · <em>{{ p.revista }}</em> · {{ p.ano }}</div>
+            </div>
+            <span class="pub-doi">{% if p.doi %}DOI →{% endif %}</span>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

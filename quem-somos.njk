@@ -1,0 +1,51 @@
+---
+layout: base.njk
+nav_key: quem-somos
+titulo_pagina: Quem Somos
+permalink: /quem-somos/
+---
+<div class="page">
+  <div class="wrap">
+    <div class="kicker reveal in">{{ quemsomos.kicker }}</div>
+    <h1 class="h1">{{ quemsomos.titulo }}</h1>
+    <div class="about-grid">
+      <div class="about-text">
+        {% for p in quemsomos.paragrafos %}
+          <p>{{ p | safe }}</p>
+        {% endfor %}
+      </div>
+      <div class="about-box">
+        <h3 class="kicker">{{ quemsomos.linhasTitulo }}</h3>
+        {% for l in linhas %}
+          <div class="about-linha">
+            <span class="neon mono">{{ l.n }}</span>
+            <span>{{ l.titulo }}</span>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="kicker" style="margin-top: 72px">{{ quemsomos.pessoasKicker }}</div>
+    <h2 class="h2" style="margin-bottom: 40px">{{ quemsomos.equipeTitulo }}</h2>
+    {% for g in equipe.grupos %}
+      <div class="grupo">
+        <div class="grupo-head">
+          <h3>{{ g.rotulo }}</h3>
+          <span class="mono neon">{{ g.membros.length | pad2 }}</span>
+        </div>
+        <div class="mgrid{% if g.grande %} lg{% endif %}">
+          {% for m in g.membros %}
+            <div class="mcard">
+              <div class="mfoto{% if g.grande %} lg{% endif %}">{{ m.nome | iniciais }}</div>
+              <div>
+                <div class="mnome">{{ m.nome }}</div>
+                <div class="mcargo">{{ m.cargo }}</div>
+                {% if m.areas %}<div class="mareas">{{ m.areas }}</div>{% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

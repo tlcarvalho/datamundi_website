@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% if titulo_pagina %}{{ titulo_pagina }} — {{ site.nome }}{% else %}{{ site.nome }} — Ciência de Dados em Relações Internacionais{% endif %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+  <!-- ── Cabeçalho / Menu ── -->
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="nav-logo" href="/" aria-label="{{ site.nome }} — Home">
+        <img src="{{ site.logo }}" alt="{{ site.nome }}" />
+      </a>
+      <div class="nav-links">
+        {% for item in site.nav %}
+          <a class="nav-link{% if item.chave == nav_key %} on{% endif %}" href="{{ item.url }}">{{ item.rotulo }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Conteúdo da página ── -->
+  <main class="main-view in" data-screen-label="{{ nav_key }}">
+    {{ content | safe }}
+  </main>
+
+  <!-- ── Rodapé ── -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <img src="{{ site.logo }}" alt="{{ site.nome }}" />
+          <p>{{ site.descricaoRodape }}</p>
+        </div>
+        <div class="foot-cols">
+          <div>
+            <div class="kicker">Laboratório</div>
+            {% for item in site.nav %}
+              {% if not loop.first %}
+                <a href="{{ item.url }}">{{ item.rotulo }}</a>
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div>
+            <div class="kicker">Contato</div>
+            <a href="mailto:{{ site.contato.email }}">{{ site.contato.email }}</a>
+            {% for rede in site.contato.redes %}
+              <a class="lnk" href="{{ rede.url }}">{{ rede.rotulo }}</a>
+            {% endfor %}
+          </div>
+          <div>
+            <div class="kicker">Publicação</div>
+            {% for linha in site.publicacaoRodape %}
+              <span class="mono">{{ linha }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="foot-base">
+        <span>{{ site.copyright }}</span>
+        <span>{{ site.rodapeSubtitulo }}</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

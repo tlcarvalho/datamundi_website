@@ -1,0 +1,43 @@
+---
+layout: base.njk
+nav_key: noticias
+titulo_pagina: Notícias
+permalink: /noticias/
+kicker: Cobertura
+titulo: Notícias
+filtros:
+  - Todos
+  - Pesquisa
+  - Evento
+  - Parceria
+  - Publicação
+---
+<div class="page">
+  <div class="wrap">
+    <div class="kicker reveal in">{{ kicker }}</div>
+    <h1 class="h1">{{ titulo }}</h1>
+    <div class="filtros" data-filtro-grupo="#lista-noticias">
+      {% for f in filtros %}
+        <button class="filtro{% if loop.first %} on{% endif %}" data-valor="{{ f }}">{{ f }}</button>
+      {% endfor %}
+    </div>
+    <div class="ngrid" id="lista-noticias">
+      {% for n in noticias %}
+        <div class="reveal" data-tag="{{ n.tag }}" style="transition-delay: {{ loop.index0 * 90 }}ms">
+          <article class="ncard">
+            <div class="ncard-img">
+              {% if n.imagem %}<img src="{{ n.imagem }}" alt="{{ n.titulo }}" />{% else %}<span class="mono-hint">imagem</span>{% endif %}
+            </div>
+            <div class="ncard-meta">
+              <span class="tag">{{ n.tag }}</span>
+              <span class="mono-date">{{ n.data }}</span>
+            </div>
+            <h3>{{ n.titulo }}</h3>
+            <p>{{ n.resumo }}</p>
+            <span class="ncard-more">Leia mais <span class="arr">→</span></span>
+          </article>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

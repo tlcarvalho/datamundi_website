@@ -1,0 +1,12 @@
+{
+  "kicker": "O laboratório",
+  "titulo": "Quem somos",
+  "paragrafos": [
+    "O <strong>DataMundi</strong> é um laboratório de pesquisa que une Ciência de Dados e Relações Internacionais.",
+    "Nosso trabalho aplica métodos computacionais — análise de redes, processamento de linguagem natural, inferência estatística — para compreender política externa e segurança internacional.",
+    "Investigamos como Estados, organizações e sociedades agem no sistema internacional, com foco especial na América Latina."
+  ],
+  "linhasTitulo": "Linhas de pesquisa",
+  "pessoasKicker": "Pessoas",
+  "equipeTitulo": "Equipe"
+}

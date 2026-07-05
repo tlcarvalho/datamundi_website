@@ -1,0 +1,47 @@
+{
+  "grupos": [
+    {
+      "chave": "professores",
+      "rotulo": "Professores",
+      "grande": true,
+      "membros": [
+        { "nome": "Prof. Dr. Thales Carvalho", "cargo": "Coordenador · Professor Adjunto" },
+        { "nome": "Dr. Vinicius Santos", "cargo": "Pós-Doutorando" },
+        { "nome": "Prof. Dr. Felipe Souza", "cargo": "Professor Colaborador" }
+      ]
+    },
+    {
+      "chave": "posgraduandos",
+      "rotulo": "Pós-graduandos",
+      "grande": false,
+      "membros": [
+        { "nome": "Alanna Itajahy", "cargo": "Doutoranda" },
+        { "nome": "Amanda Lopes", "cargo": "Doutoranda" },
+        { "nome": "Artur Boya", "cargo": "Doutoranda" },
+        { "nome": "Thaísa Viana", "cargo": "Doutoranda" },
+        { "nome": "Stephanie Braun Clemente", "cargo": "Doutoranda" },
+        { "nome": "João Lucas Nogueira", "cargo": "Mestrando" }
+      ]
+    },
+    {
+      "chave": "graduandos",
+      "rotulo": "Graduandos",
+      "grande": false,
+      "membros": [
+        { "nome": "Bárbara Nogueira", "cargo": "Graduanda" },
+        { "nome": "Bernardo Siqueira", "cargo": "Graduando" },
+        { "nome": "Carlos Fernandes", "cargo": "Graduando" },
+        { "nome": "Flávia Beatriz", "cargo": "Graduanda" },
+        { "nome": "Igor Abreu", "cargo": "Graduando" },
+        { "nome": "Israel Neres", "cargo": "Graduando" },
+        { "nome": "João Sandman", "cargo": "Graduando" },
+        { "nome": "Júlia Lameiras", "cargo": "Graduanda" },
+        { "nome": "Laurent Auburtin", "cargo": "Graduando" },
+        { "nome": "Maria Eduarda Oliveira", "cargo": "Graduanda" },
+        { "nome": "Maria Luisa Serra", "cargo": "Graduanda" },
+        { "nome": "Rafael Lima", "cargo": "Graduando" },
+        { "nome": "Sophia Ribeiro", "cargo": "Graduanda" }
+      ]
+    }
+  ]
+}

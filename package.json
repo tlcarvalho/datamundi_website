@@ -1,0 +1,14 @@
+{
+  "name": "datamundi-site",
+  "version": "4.0.0",
+  "description": "Site do laboratório DataMundi — Ciência de Dados em Relações Internacionais. Construído com Eleventy (11ty).",
+  "scripts": {
+    "start": "eleventy --serve",
+    "dev": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

@@ -1,0 +1,160 @@
+---
+layout: base.njk
+nav_key: home
+permalink: /
+---
+<section class="hero">
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <div class="kicker reveal in"></div>
+      <h1>
+        {% for linha in home.hero.tituloLinhas %}
+          <span class="h-line"><span{% if loop.last %} class="neon"{% endif %}>{{ linha }}</span></span>
+        {% endfor %}
+      </h1>
+      <p class="hero-sub">{{ home.hero.subtitulo | safe }}</p>
+      <div class="hero-cta">
+        <a class="btn-neon" href="{{ home.hero.ctaPrimario.url }}">{{ home.hero.ctaPrimario.texto }}</a>
+        <a class="btn-ghost" href="{{ home.hero.ctaSecundario.url }}">{{ home.hero.ctaSecundario.texto }}</a>
+      </div>
+    </div>
+    <div class="hero-globe">
+      <canvas id="globe" data-size="560" aria-hidden="true"></canvas>
+    </div>
+  </div>
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      {% for k in [0, 1] %}
+        <div class="ticker-group">
+          {% for t in home.ticker %}
+            <span><i>◆</i>{{ t }}</span>
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Duas frentes -->
+<section class="section">
+  <div class="wrap">
+    <div class="kicker reveal">{{ home.frentes.kicker }}</div>
+    <h2 class="h2 reveal" style="transition-delay: 60ms">{{ home.frentes.titulo | safe }}</h2>
+    <div class="frentes">
+      {% for card in home.frentes.cards %}
+        <div class="reveal" style="transition-delay: {{ 100 + loop.index0 * 100 }}ms">
+          <div class="frente">
+            <div class="frente-n">{{ card.sigla }}</div>
+            <h3>{{ card.titulo }}</h3>
+            <p>{{ card.descricao }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Linhas de pesquisa -->
+<section class="section pad-top-0">
+  <div class="wrap">
+    <div class="kicker reveal">{{ home.linhasKicker }}</div>
+    <div class="linhas">
+      {% for l in linhas %}
+        <div class="reveal" style="transition-delay: {{ loop.index0 * 80 }}ms">
+          <div class="linha-row">
+            <span class="linha-n">{{ l.n }}</span>
+            <h3>{{ l.titulo }}</h3>
+            <p>{{ l.descricao }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="stats-row">
+      {% for s in home.estatisticas %}
+        <div class="stat">
+          <div class="stat-n" data-count="{{ s.numero }}" data-suffix="{{ s.sufixo }}">0{{ s.sufixo }}</div>
+          <div class="stat-l">{{ s.rotulo }}</div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Notícias -->
+<section class="section alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="kicker reveal">{{ home.noticiasSecao.kicker }}</div>
+        <h2 class="h2 reveal" style="transition-delay: 60ms">{{ home.noticiasSecao.titulo }}</h2>
+      </div>
+      <a class="btn-ghost sm" href="/noticias/">{{ home.noticiasSecao.verTodas }}</a>
+    </div>
+    <div class="ngrid">
+      {% for n in noticias %}
+        {% if loop.index <= 3 %}
+          <div class="reveal" style="transition-delay: {{ loop.index0 * 90 }}ms">
+            <article class="ncard">
+              <div class="ncard-img">
+                {% if n.imagem %}<img src="{{ n.imagem }}" alt="{{ n.titulo }}" />{% else %}<span class="mono-hint">imagem</span>{% endif %}
+              </div>
+              <div class="ncard-meta">
+                <span class="tag">{{ n.tag }}</span>
+                <span class="mono-date">{{ n.data }}</span>
+              </div>
+              <h3>{{ n.titulo }}</h3>
+              <p>{{ n.resumo }}</p>
+              <span class="ncard-more">Leia mais <span class="arr">→</span></span>
+            </article>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Publicações recentes -->
+<section class="section light-sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="kicker dark reveal">{{ home.publicacoesSecao.kicker }}</div>
+        <h2 class="h2 reveal" style="transition-delay: 60ms">{{ home.publicacoesSecao.titulo }}</h2>
+      </div>
+      <a class="btn-dark sm" href="/publicacoes/">{{ home.publicacoesSecao.verTodas }}</a>
+    </div>
+    <div>
+      {% for p in publicacoes %}
+        {% if loop.index <= 3 %}
+          <div class="reveal" style="transition-delay: {{ loop.index0 * 60 }}ms">
+            <div class="pubrow light">
+              <span class="pub-tipo">{{ p.tipo }}</span>
+              <div class="pub-body">
+                <h3>{{ p.titulo }}</h3>
+                <div class="pub-meta">{{ p.autores }} · <em>{{ p.revista }}</em> · {{ p.ano }}</div>
+              </div>
+              <span class="pub-doi">{% if p.doi %}DOI →{% endif %}</span>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Boletim CTA -->
+<section class="section">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="cta-neon">
+        <div>
+          <div class="kicker dark">{{ home.boletimCta.kicker }}</div>
+          <h2>{{ home.boletimCta.titulo }}</h2>
+          <p>{{ home.boletimCta.descricao }}</p>
+        </div>
+        <a class="btn-dark" href="/boletim/">{{ home.boletimCta.botao }}</a>
+      </div>
+    </div>
+  </div>
+</section>

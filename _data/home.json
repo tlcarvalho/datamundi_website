@@ -1,0 +1,56 @@
+{
+  "hero": {
+    "tituloLinhas": ["Dados que", "explicam", "o mundo."],
+    "subtitulo": "O DataMundi é um laboratório de pesquisa une <strong>Ciência de Dados</strong> e <strong>Relações Internacionais</strong> para compreender a política internacional e seus diversos temas, como política externa e segurança.",
+    "ctaPrimario": { "texto": "Conheça o laboratório", "url": "/quem-somos/" },
+    "ctaSecundario": { "texto": "Publicações", "url": "/publicacoes/" }
+  },
+  "ticker": [
+    "Política Externa",
+    "Segurança Internacional",
+    "Opinião Pública",
+    "Métodos Computacionais",
+    "Análise de Redes",
+    "Diplomacia Digital",
+    "Dados Abertos",
+    "Sistema Internacional"
+  ],
+  "frentes": {
+    "kicker": "O que fazemos",
+    "titulo": "Duas disciplinas,<br />uma pergunta: <span class=\"neon\">como as RI funcionam?</span>",
+    "cards": [
+      {
+        "sigla": "CD",
+        "titulo": "Ciência de Dados",
+        "descricao": "Coleta, modelagem e visualização em larga escala: processamento de linguagem natural, análise de redes e estatística inferencial aplicados a dados sobre a política no nosso mundo.."
+      },
+      {
+        "sigla": "RI",
+        "titulo": "Relações Internacionais",
+        "descricao": "Teoria e método para entender Estados, organizações e sociedades. Estudos sobre política externa e segurança internacional a partir de modelos inferenciais de ponta."
+      }
+    ]
+  },
+  "linhasKicker": "Linhas de pesquisa",
+  "estatisticas": [
+    { "numero": 21, "sufixo": "", "rotulo": "Pesquisadores" },
+    { "numero": 6, "sufixo": "+", "rotulo": "Publicações em 2025" },
+    { "numero": 4, "sufixo": "", "rotulo": "Linhas de pesquisa" }
+  ],
+  "noticiasSecao": {
+    "kicker": "Últimas",
+    "titulo": "Notícias",
+    "verTodas": "Ver todas →"
+  },
+  "publicacoesSecao": {
+    "kicker": "Produção científica",
+    "titulo": "Publicações recentes",
+    "verTodas": "Ver todas →"
+  },
+  "boletimCta": {
+    "kicker": "Newsletter",
+    "titulo": "Boletim DataMundi",
+    "descricao": "Análises, pesquisas e eventos do lab na sua caixa de entrada. Quinzenal e gratuito.",
+    "botao": "Assinar agora →"
+  }
+}
