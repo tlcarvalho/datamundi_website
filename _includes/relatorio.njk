@@ -1,0 +1,22 @@
+---
+layout: base.njk
+nav_key: publicacoes
+---
+<article class="page">
+  <div class="wrap artigo-wrap">
+    <a class="artigo-voltar" href="/publicacoes/">← Todas as publicações</a>
+    <div class="ncard-meta" style="margin-bottom: 18px">
+      <span class="tag">Relatório</span>
+      {% if ano %}<span class="mono-date">{{ ano }}</span>{% endif %}
+    </div>
+    <h1 class="h1" style="margin-bottom: 20px">{{ titulo }}</h1>
+    {% if autores %}<div class="pub-meta" style="margin-bottom: 24px">{{ autores }}</div>{% endif %}
+    {% if resumo %}<p class="lead" style="margin-bottom: 28px">{{ resumo }}</p>{% endif %}
+    {% if arquivo %}
+      <div class="rel-actions">
+        <a class="btn-neon" href="{{ arquivo }}" target="_blank" rel="noopener">Baixar PDF ↓</a>
+      </div>
+    {% endif %}
+    <div class="artigo">{{ content | safe }}</div>
+  </div>
+</article>

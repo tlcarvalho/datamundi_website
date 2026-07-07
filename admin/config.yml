@@ -4,20 +4,6 @@
 backend:
   name: git-gateway      # usa o Netlify Identity + Git Gateway
   branch: main           # ajuste se sua branch principal tiver outro nome
-  identity_url: https://auth.decapbridge.com/sites/4e64ba93-edf4-4ffe-96d7-560f5b54315a
-  gateway_url: https://gateway.decapbridge.com
-
-  # See who did what (optional)
-  commit_messages:
-    create: Create {{collection}} "{{slug}}" - {{author-name}} <{{author-login}}> via DecapBridge
-    update: Update {{collection}} "{{slug}}" - {{author-name}} <{{author-login}}> via DecapBridge
-    delete: Delete {{collection}} "{{slug}}" - {{author-name}} <{{author-login}}> via DecapBridge
-    uploadMedia: Upload "{{path}}" - {{author-name}} <{{author-login}}> via DecapBridge
-    deleteMedia: Delete "{{path}}" - {{author-name}} <{{author-login}}> via DecapBridge
-    openAuthoring: Message {{message}} - {{author-name}} <{{author-login}}> via DecapBridge
-
-# Better Decap + Bridge logo (optional)
-logo_url: https://decapbridge.com/decapcms-with-bridge.svg
 
 # Onde as imagens enviadas pelo painel são salvas
 media_folder: "assets/img"
@@ -305,4 +291,28 @@ collections:
       - { label: "Data", name: "date", widget: "datetime", date_format: "DD/MM/YYYY", time_format: false, format: "YYYY-MM-DD" }
       - { label: "Resumo (aparece na lista)", name: "resumo", widget: "text" }
       - { label: "Imagem de capa", name: "imagem", widget: "image", required: false }
+      - { label: "Conteúdo completo", name: "body", widget: "markdown" }
+
+  # ─────────────────────────────────────────────
+  # Relatórios — hospedados no site, com página própria
+  # ─────────────────────────────────────────────
+  - name: "relatorios"
+    label: "Relatórios"
+    label_singular: "Relatório"
+    description: "Relatórios técnicos hospedados no site, com página própria e PDF para download."
+    folder: "relatorios"
+    create: true
+    extension: "md"
+    format: "frontmatter"
+    identifier_field: "titulo"
+    slug: "{{slug}}"
+    summary: "{{titulo}}"
+    sortable_fields: ["date", "titulo"]
+    fields:
+      - { label: "Título", name: "titulo", widget: "string" }
+      - { label: "Autores", name: "autores", widget: "string" }
+      - { label: "Ano", name: "ano", widget: "string" }
+      - { label: "Data (para ordenação)", name: "date", widget: "datetime", date_format: "DD/MM/YYYY", time_format: false, format: "YYYY-MM-DD", required: false }
+      - { label: "Resumo (aparece na lista de publicações)", name: "resumo", widget: "text" }
+      - { label: "Arquivo PDF", name: "arquivo", widget: "file", required: false, hint: "Envie o PDF do relatório; aparece como botão 'Baixar PDF'" }
       - { label: "Conteúdo completo", name: "body", widget: "markdown" }

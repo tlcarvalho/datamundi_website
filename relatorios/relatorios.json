@@ -1,0 +1,5 @@
+{
+  "layout": "relatorio.njk",
+  "tags": "relatorio",
+  "permalink": "/relatorios/{{ page.fileSlug }}/"
+}

@@ -5,7 +5,7 @@
 
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* ── Nav: fundo ao rolar ── */
+  /* ── Nav: fundo ao rolar + menu mobile ── */
   function initNav() {
     var nav = document.querySelector(".nav");
     if (!nav) return;
@@ -14,6 +14,22 @@
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
+
+    // Botão hambúrguer (mobile)
+    var toggle = nav.querySelector(".nav-toggle");
+    if (toggle) {
+      toggle.addEventListener("click", function () {
+        var open = nav.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+      // Fecha o menu ao clicar num link
+      nav.querySelectorAll(".nav-link").forEach(function (l) {
+        l.addEventListener("click", function () {
+          nav.classList.remove("open");
+          toggle.setAttribute("aria-expanded", "false");
+        });
+      });
+    }
   }
 
   /* ── Reveal ao entrar na tela ── */
@@ -78,7 +94,7 @@
     });
   }
 
-  /* ── Formulário do boletim ── */
+  /* ── Formulário do boletim (Netlify Forms) ── */
   function initForm() {
     var form = document.getElementById("boletim-form");
     if (!form) return;
@@ -93,121 +109,149 @@
       }
       email.classList.remove("err");
       if (err) err.style.display = "none";
-      form.style.display = "none";
-      var ok = document.getElementById("form-ok");
-      if (ok) ok.style.display = "block";
+
+      // Envia os dados ao Netlify Forms (armazenados no painel do Netlify;
+      // notificações por e-mail são configuradas em Forms → Notifications).
+      var dados = new URLSearchParams(new FormData(form)).toString();
+      var mostrarSucesso = function () {
+        form.style.display = "none";
+        var ok = document.getElementById("form-ok");
+        if (ok) ok.style.display = "block";
+      };
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: dados,
+      }).then(mostrarSucesso).catch(mostrarSucesso);
     });
   }
 
-  /* ── Globo de dados (canvas) ── */
+  /* ── Globo de dados (canvas, responsivo) ── */
   function initGlobe() {
     var canvas = document.getElementById("globe");
     if (!canvas) return;
-    var size = parseInt(canvas.getAttribute("data-size"), 10) || 560;
-    canvas.style.width = size + "px";
-    canvas.style.height = size + "px";
-    canvas.style.display = "block";
-    canvas.style.maxWidth = "100%";
-
-    var dpr = Math.min(window.devicePixelRatio || 1, 2);
-    canvas.width = size * dpr;
-    canvas.height = size * dpr;
     var ctx = canvas.getContext("2d");
-    ctx.scale(dpr, dpr);
+    var maxSize = parseInt(canvas.getAttribute("data-size"), 10) || 560;
+    var raf = null;
 
-    var R = size * 0.36;
-    var cx = size / 2, cy = size / 2;
+    function build() {
+      if (raf) cancelAnimationFrame(raf);
+      // tamanho responsivo: cabe no container, limitado ao data-size
+      var parent = canvas.parentElement;
+      var avail = parent ? parent.clientWidth : maxSize;
+      var size = Math.max(220, Math.min(maxSize, avail || maxSize));
 
-    var N = 620;
-    var pts = [];
-    var golden = Math.PI * (3 - Math.sqrt(5));
-    for (var i = 0; i < N; i++) {
-      var y = 1 - (i / (N - 1)) * 2;
-      var r = Math.sqrt(1 - y * y);
-      var th = golden * i;
-      pts.push({ x: Math.cos(th) * r, y: y, z: Math.sin(th) * r });
-    }
+      canvas.style.width = size + "px";
+      canvas.style.height = size + "px";
+      canvas.style.display = "block";
 
-    function mkArc() {
-      var a = pts[Math.floor(Math.random() * N)];
-      var b = pts[Math.floor(Math.random() * N)];
-      return { a: a, b: b, t: 0, speed: 0.004 + Math.random() * 0.005, life: 0 };
-    }
-    var arcs = [];
-    for (var k = 0; k < 6; k++) { var arc = mkArc(); arc.t = -k * 0.3; arcs.push(arc); }
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = size * dpr;
+      canvas.height = size * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-    var rot = 0, raf;
+      var R = size * 0.36;
+      var cx = size / 2, cy = size / 2;
 
-    function project(p, rotY) {
-      var cos = Math.cos(rotY), sin = Math.sin(rotY);
-      var x = p.x * cos - p.z * sin;
-      var z = p.x * sin + p.z * cos;
-      var tilt = -0.35;
-      var yy = p.y * Math.cos(tilt) - z * Math.sin(tilt);
-      var z2 = p.y * Math.sin(tilt) + z * Math.cos(tilt);
-      return { sx: cx + x * R, sy: cy + yy * R, z: z2 };
-    }
-
-    function slerpPoint(a, b, t) {
-      var dot = Math.max(-1, Math.min(1, a.x * b.x + a.y * b.y + a.z * b.z));
-      var om = Math.acos(dot) || 0.0001;
-      var s = Math.sin(om);
-      var k1 = Math.sin((1 - t) * om) / s, k2 = Math.sin(t * om) / s;
-      var lift = 1 + 0.25 * Math.sin(Math.PI * t);
-      return {
-        x: (a.x * k1 + b.x * k2) * lift,
-        y: (a.y * k1 + b.y * k2) * lift,
-        z: (a.z * k1 + b.z * k2) * lift,
-      };
-    }
-
-    function draw() {
-      ctx.clearRect(0, 0, size, size);
-
-      for (var j = 0; j < pts.length; j++) {
-        var pr = project(pts[j], rot);
-        var front = pr.z > 0;
-        var alpha = front ? 0.28 + pr.z * 0.5 : 0.05;
-        var rad = front ? 1.1 + pr.z * 0.9 : 0.8;
-        ctx.beginPath();
-        ctx.arc(pr.sx, pr.sy, rad, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(232,255,0," + alpha.toFixed(3) + ")";
-        ctx.fill();
+      var N = 620;
+      var pts = [];
+      var golden = Math.PI * (3 - Math.sqrt(5));
+      for (var i = 0; i < N; i++) {
+        var y = 1 - (i / (N - 1)) * 2;
+        var r = Math.sqrt(1 - y * y);
+        var th = golden * i;
+        pts.push({ x: Math.cos(th) * r, y: y, z: Math.sin(th) * r });
       }
 
-      for (var m = 0; m < arcs.length; m++) {
-        var ar = arcs[m];
-        ar.t += ar.speed;
-        if (ar.t > 1.6) { var na = mkArc(); ar.a = na.a; ar.b = na.b; ar.t = na.t; ar.speed = na.speed; }
-        var head = Math.max(0, Math.min(1, ar.t));
-        var tail = Math.max(0, ar.t - 0.35);
-        if (head <= tail) continue;
-        ctx.beginPath();
-        var started = false;
-        var steps = 36;
-        for (var q = 0; q <= steps; q++) {
-          var t = tail + (head - tail) * (q / steps);
-          var prc = project(slerpPoint(ar.a, ar.b, t), rot);
-          if (prc.z < -0.15) { started = false; continue; }
-          if (!started) { ctx.moveTo(prc.sx, prc.sy); started = true; }
-          else ctx.lineTo(prc.sx, prc.sy);
-        }
-        ctx.strokeStyle = "rgba(232,255,0,0.55)";
-        ctx.lineWidth = 1.4;
-        ctx.stroke();
-        var hp = project(slerpPoint(ar.a, ar.b, head), rot);
-        if (hp.z > -0.15) {
+      function mkArc() {
+        var a = pts[Math.floor(Math.random() * N)];
+        var b = pts[Math.floor(Math.random() * N)];
+        return { a: a, b: b, t: 0, speed: 0.004 + Math.random() * 0.005, life: 0 };
+      }
+      var arcs = [];
+      for (var k = 0; k < 6; k++) { var arc = mkArc(); arc.t = -k * 0.3; arcs.push(arc); }
+
+      var rot = 0;
+
+      function project(p, rotY) {
+        var cos = Math.cos(rotY), sin = Math.sin(rotY);
+        var x = p.x * cos - p.z * sin;
+        var z = p.x * sin + p.z * cos;
+        var tilt = -0.35;
+        var yy = p.y * Math.cos(tilt) - z * Math.sin(tilt);
+        var z2 = p.y * Math.sin(tilt) + z * Math.cos(tilt);
+        return { sx: cx + x * R, sy: cy + yy * R, z: z2 };
+      }
+
+      function slerpPoint(a, b, t) {
+        var dot = Math.max(-1, Math.min(1, a.x * b.x + a.y * b.y + a.z * b.z));
+        var om = Math.acos(dot) || 0.0001;
+        var s = Math.sin(om);
+        var k1 = Math.sin((1 - t) * om) / s, k2 = Math.sin(t * om) / s;
+        var lift = 1 + 0.25 * Math.sin(Math.PI * t);
+        return {
+          x: (a.x * k1 + b.x * k2) * lift,
+          y: (a.y * k1 + b.y * k2) * lift,
+          z: (a.z * k1 + b.z * k2) * lift,
+        };
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, size, size);
+
+        for (var j = 0; j < pts.length; j++) {
+          var pr = project(pts[j], rot);
+          var front = pr.z > 0;
+          var alpha = front ? 0.28 + pr.z * 0.5 : 0.05;
+          var rad = front ? 1.1 + pr.z * 0.9 : 0.8;
           ctx.beginPath();
-          ctx.arc(hp.sx, hp.sy, 2.4, 0, Math.PI * 2);
-          ctx.fillStyle = "#E8FF00";
+          ctx.arc(pr.sx, pr.sy, rad, 0, Math.PI * 2);
+          ctx.fillStyle = "rgba(232,255,0," + alpha.toFixed(3) + ")";
           ctx.fill();
         }
-      }
 
-      rot += 0.0022;
-      if (!reduced) raf = requestAnimationFrame(draw);
+        for (var m = 0; m < arcs.length; m++) {
+          var ar = arcs[m];
+          ar.t += ar.speed;
+          if (ar.t > 1.6) { var na = mkArc(); ar.a = na.a; ar.b = na.b; ar.t = na.t; ar.speed = na.speed; }
+          var head = Math.max(0, Math.min(1, ar.t));
+          var tail = Math.max(0, ar.t - 0.35);
+          if (head <= tail) continue;
+          ctx.beginPath();
+          var started = false;
+          var steps = 36;
+          for (var q = 0; q <= steps; q++) {
+            var t = tail + (head - tail) * (q / steps);
+            var prc = project(slerpPoint(ar.a, ar.b, t), rot);
+            if (prc.z < -0.15) { started = false; continue; }
+            if (!started) { ctx.moveTo(prc.sx, prc.sy); started = true; }
+            else ctx.lineTo(prc.sx, prc.sy);
+          }
+          ctx.strokeStyle = "rgba(232,255,0,0.55)";
+          ctx.lineWidth = 1.4;
+          ctx.stroke();
+          var hp = project(slerpPoint(ar.a, ar.b, head), rot);
+          if (hp.z > -0.15) {
+            ctx.beginPath();
+            ctx.arc(hp.sx, hp.sy, 2.4, 0, Math.PI * 2);
+            ctx.fillStyle = "#E8FF00";
+            ctx.fill();
+          }
+        }
+
+        rot += 0.0022;
+        if (!reduced) raf = requestAnimationFrame(draw);
+      }
+      draw();
     }
-    draw();
+
+    build();
+    // Recalcula o tamanho quando a janela muda (com debounce)
+    var rt;
+    window.addEventListener("resize", function () {
+      clearTimeout(rt);
+      rt = setTimeout(build, 200);
+    });
   }
 
   function init() {

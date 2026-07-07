@@ -1,0 +1,78 @@
+---
+layout: base.njk
+nav_key: boletim
+titulo_pagina: Boletim
+permalink: /boletim/
+---
+<div class="page">
+  <div class="wrap">
+    <div class="kicker reveal in">{{ boletim.kicker }}</div>
+    <h1 class="h1">{{ boletim.titulo }}</h1>
+    <p class="lead">{{ boletim.lead }}</p>
+    <div class="bol-meta">
+      {% for m in boletim.meta %}
+        <span><b class="neon">{{ m.rotulo }}</b> {{ m.valor }}</span>
+      {% endfor %}
+    </div>
+
+    <div class="bol-grid">
+      <div>
+        <div class="kicker">{{ boletim.publicacoesTitulo }}</div>
+        {% for p in collections.post | reverse %}
+          <a class="reveal post-link" href="{{ p.url }}" style="transition-delay: {{ loop.index0 * 70 }}ms">
+            <div class="edicao">
+              <div class="ed-num">
+                <div class="mono neon">{{ p.date | dataBR }}</div>
+              </div>
+              <div>
+                <p>{{ p.data.titulo }}</p>
+                {% if p.data.autor %}<div class="post-autor mono">por {{ p.data.autor }}</div>{% endif %}
+                {% if p.data.resumo %}<div class="post-resumo">{{ p.data.resumo }}</div>{% endif %}
+                <span class="ed-link">{{ boletim.lerPublicacao }}</span>
+              </div>
+            </div>
+          </a>
+        {% endfor %}
+        <div class="kicker" style="margin-top: 44px">{{ boletim.incluiTitulo }}</div>
+        <ul class="bol-lista">
+          {% for item in boletim.incluiItens %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="form-card" id="form-card">
+        <form id="boletim-form" name="boletim" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
+          <input type="hidden" name="form-name" value="boletim" />
+          <p style="display: none"><label>Não preencha se for humano: <input name="bot-field" /></label></p>
+          <h2>{{ boletim.form.titulo }}</h2>
+          <p class="form-sub">{{ boletim.form.subtitulo }}</p>
+          <label><span>{{ boletim.form.labelNome }}</span>
+            <input type="text" name="nome" placeholder="{{ boletim.form.placeholderNome }}" />
+          </label>
+          <label><span>{{ boletim.form.labelEmail }}</span>
+            <input type="email" name="email" placeholder="{{ boletim.form.placeholderEmail }}" />
+            <em class="err-msg" style="display: none">Por favor, insira um e-mail válido.</em>
+          </label>
+          <label><span>{{ boletim.form.labelInstituicao }}</span>
+            <input type="text" name="instituicao" placeholder="{{ boletim.form.placeholderInstituicao }}" />
+          </label>
+          <label><span>{{ boletim.form.labelPerfil }}</span>
+            <select name="perfil" defaultValue="">
+              <option value="">Selecione (opcional)</option>
+              {% for op in boletim.form.opcoesPerfil %}
+                <option>{{ op }}</option>
+              {% endfor %}
+            </select>
+          </label>
+          <button type="submit" class="btn-neon full">{{ boletim.form.botao }}</button>
+        </form>
+        <div class="form-ok" id="form-ok" style="display: none">
+          <div class="ok-ball">✓</div>
+          <h2>{{ boletim.form.sucessoTitulo }}</h2>
+          <p>{{ boletim.form.sucessoTexto }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
