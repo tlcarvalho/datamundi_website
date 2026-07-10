@@ -42,7 +42,9 @@ permalink: /boletim/
       </div>
 
       <div class="form-card" id="form-card">
-        <form id="boletim-form" novalidate>
+        <form id="boletim-form" name="boletim" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
+          <input type="hidden" name="form-name" value="boletim" />
+          <p style="display: none"><label>Não preencha se for humano: <input name="bot-field" /></label></p>
           <h2>{{ boletim.form.titulo }}</h2>
           <p class="form-sub">{{ boletim.form.subtitulo }}</p>
           <label><span>{{ boletim.form.labelNome }}</span>

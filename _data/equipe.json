@@ -5,8 +5,8 @@
       "rotulo": "Professores",
       "grande": true,
       "membros": [
-        { "nome": "Prof. Dr. Thales Carvalho", "cargo": "Coordenador · Professor Adjunto" },
-        { "nome": "Dr. Vinicius Santos", "cargo": "Pós-Doutorando" },
+        { "nome": "Thales Carvalho", "cargo": "Coordenador · Professor Adjunto" },
+        { "nome": "Vinicius Santos", "cargo": "Pós-Doutorando" },
         { "nome": "Prof. Dr. Felipe Souza", "cargo": "Professor Colaborador" }
       ]
     },
@@ -20,6 +20,7 @@
         { "nome": "Artur Boya", "cargo": "Doutoranda" },
         { "nome": "Thaísa Viana", "cargo": "Doutoranda" },
         { "nome": "Stephanie Braun Clemente", "cargo": "Doutoranda" },
+        { "nome": "Thayane Queiroz", "cargo": "Doutoranda" },
         { "nome": "João Lucas Nogueira", "cargo": "Mestrando" }
       ]
     },

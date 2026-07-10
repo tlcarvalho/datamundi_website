@@ -2,11 +2,19 @@
   "lista": [
     {
       "tipo": "Artigo",
+      "titulo": "International Security Governance in Latin America: A Historical Assessment.",
+      "autores": "Thales Carvalho, David Mares",
+      "revista": "Oxford Research Encyclopedia of International Studies",
+      "ano": "2025",
+      "doi": "https://doi.org/10.1093/acrefore/9780190846626.013.884"
+    },
+    {
+      "tipo": "Artigo",
       "titulo": "Following the Trail of Words: Mapping the Trending Topics of Graduate Research in the Brazilian IR Scholarship (1987-2018)",
       "autores": "Thales Carvalho, Vinicius Santos, Yulieth Martinez",
       "revista": "Brazilian Political Science Review",
       "ano": "2024",
-      "doi": "10.1590/1981-3821202400010002"
+      "doi": "https://doi.org/10.1590/1981-3821202400010002"
     },
     {
       "tipo": "Artigo",
@@ -14,7 +22,7 @@
       "autores": "Luis Schenoni, Diego Leiva, Thales Carvalho",
       "revista": "Bulletin of Latin American Research",
       "ano": "2023",
-      "doi": "10.1111/blar.13574"
+      "doi": "https://doi.org/10.1111/blar.13574"
     },
     {
       "tipo": "Artigo",
@@ -22,7 +30,7 @@
       "autores": "Thales Carvalho, Dawisson Belém Lopes",
       "revista": "Latin American Politics and Society",
       "ano": "2022",
-      "doi": "10.1017/lap.2022.11"
+      "doi": "https://doi.org/10.1017/lap.2022.11"
     },
     {
       "tipo": "Artigo",
@@ -30,15 +38,7 @@
       "autores": "Thales Carvalho, João Paulo Nicolini Gabriel, Dawisson Belém Lopes",
       "revista": "Contexto Internacional",
       "ano": "2021",
-      "doi": "10.1590/S0102-8529.2019430300002 "
-    },
-    {
-      "tipo": "Artigo",
-      "titulo": "International Security Governance in Latin America: A Historical Assessment.",
-      "autores": "Thales Carvalho, David Mares",
-      "revista": "Oxford Research Encyclopedia of International Studies",
-      "ano": "2025",
-      "doi": "10.1093/acrefore/9780190846626.013.884"
+      "doi": "https://doi.org/10.1590/S0102-8529.2019430300002 "
     }
   ]
 }
