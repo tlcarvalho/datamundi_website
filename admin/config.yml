@@ -3,7 +3,10 @@
 
 backend:
   name: git-gateway      # usa o Netlify Identity + Git Gateway
-  branch: main           # ajuste se sua branch principal tiver outro nome
+  repo: tlcarvalho/datamundi_website
+  branch: main
+  identity_url: https://auth.decapbridge.com/sites/4e64ba93-edf4-4ffe-96d7-560f5b54315a
+  gateway_url: https://gateway.decapbridge.com
 
 # Onde as imagens enviadas pelo painel são salvas
 media_folder: "assets/img"
