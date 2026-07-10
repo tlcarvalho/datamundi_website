@@ -21,17 +21,37 @@ filtros:
       {% endfor %}
     </div>
     <div id="lista-publicacoes">
+      {# Relatórios — hospedados no site, cada um com página própria #}
+      {% for r in collections.relatorio | reverse %}
+        <a class="reveal pubrow" href="{{ r.url }}" data-tag="Relatório" style="transition-delay: {{ loop.index0 * 60 }}ms">
+          <span class="pub-tipo">Relatório</span>
+          <div class="pub-body">
+            <h3>{{ r.data.titulo }}</h3>
+            <div class="pub-meta">{{ r.data.autores }}{% if r.data.ano %} · {{ r.data.ano }}{% endif %}</div>
+          </div>
+          <span class="pub-doi">Abrir →</span>
+        </a>
+      {% endfor %}
+      {# Artigos, livros etc. — link externo via DOI #}
       {% for p in publicacoes.lista %}
-        <div class="reveal" data-tag="{{ p.tipo }}" style="transition-delay: {{ loop.index0 * 60 }}ms">
-          <div class="pubrow">
+        {% if p.doi %}
+          <a class="reveal pubrow" href="https://doi.org/{{ p.doi | trim }}" target="_blank" rel="noopener" data-tag="{{ p.tipo }}" style="transition-delay: {{ loop.index0 * 60 }}ms">
             <span class="pub-tipo">{{ p.tipo }}</span>
             <div class="pub-body">
               <h3>{{ p.titulo }}</h3>
               <div class="pub-meta">{{ p.autores }} · <em>{{ p.revista }}</em> · {{ p.ano }}</div>
             </div>
-            <span class="pub-doi">{% if p.doi %}DOI →{% endif %}</span>
+            <span class="pub-doi">DOI →</span>
+          </a>
+        {% else %}
+          <div class="reveal pubrow" data-tag="{{ p.tipo }}" style="transition-delay: {{ loop.index0 * 60 }}ms">
+            <span class="pub-tipo">{{ p.tipo }}</span>
+            <div class="pub-body">
+              <h3>{{ p.titulo }}</h3>
+              <div class="pub-meta">{{ p.autores }} · <em>{{ p.revista }}</em> · {{ p.ano }}</div>
+            </div>
           </div>
-        </div>
+        {% endif %}
       {% endfor %}
     </div>
   </div>

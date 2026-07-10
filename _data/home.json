@@ -44,7 +44,7 @@
   "linhasKicker": "Linhas de pesquisa",
   "estatisticas": [
     {
-      "numero": 21,
+      "numero": {{publicacoes.lista.length}},
       "sufixo": "",
       "rotulo": "Pesquisadores"
     },
