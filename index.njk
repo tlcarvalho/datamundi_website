@@ -70,10 +70,15 @@ permalink: /
         </div>
       {% endfor %}
     </div>
+    {% set statsNumeros = [
+      equipe.grupos | sumMembros,
+      publicacoes.lista.length + collections.relatorio.length,
+      linhas.lista.length
+    ] %}
     <div class="stats-row">
       {% for s in home.estatisticas %}
         <div class="stat">
-          <div class="stat-n" data-count="{{ s.numero }}" data-suffix="{{ s.sufixo }}">0{{ s.sufixo }}</div>
+          <div class="stat-n" data-count="{{ statsNumeros[loop.index0] }}" data-suffix="{{ s.sufixo }}">0{{ s.sufixo }}</div>
           <div class="stat-l">{{ s.rotulo }}</div>
         </div>
       {% endfor %}

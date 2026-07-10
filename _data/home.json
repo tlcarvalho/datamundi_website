@@ -27,7 +27,7 @@
   ],
   "frentes": {
     "kicker": "O que fazemos",
-    "titulo": "Duas disciplinas,<br />uma pergunta: <span class=\"neon\">como as RI funcionam?</span>",
+    "titulo": "Duas disciplinas,<br /> uma pergunta: <span class=\"neon\">como as RI funcionam?</span>",
     "cards": [
       {
         "sigla": "CD",
@@ -44,17 +44,14 @@
   "linhasKicker": "Linhas de pesquisa",
   "estatisticas": [
     {
-      "numero": {{publicacoes.lista.length}},
       "sufixo": "",
       "rotulo": "Pesquisadores"
     },
     {
-      "numero": 6,
       "sufixo": "+",
       "rotulo": "Publicações"
     },
     {
-      "numero": 2,
       "sufixo": "",
       "rotulo": "Linhas de pesquisa"
     }

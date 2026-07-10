@@ -36,6 +36,13 @@ module.exports = function (eleventyConfig) {
     return String(dt.getUTCDate()).padStart(2, "0") + " " + meses[dt.getUTCMonth()] + " " + dt.getUTCFullYear();
   });
 
+  // Soma o total de membros em todos os grupos de equipe.json
+  eleventyConfig.addFilter("sumMembros", function (grupos) {
+    return (grupos || []).reduce(function (total, g) {
+      return total + ((g.membros || []).length);
+    }, 0);
+  });
+
   return {
     dir: {
       input: ".",
