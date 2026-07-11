@@ -1,6 +1,6 @@
 ---
 titulo: O Boletim DataMundi está no ar!
-autor: Thales Leonardo de Carvalho
+autor: Thales Carvalho
 date: 2026-07-10
 resumo: Nasce o Boletim DataMundi!
 imagem: ""
