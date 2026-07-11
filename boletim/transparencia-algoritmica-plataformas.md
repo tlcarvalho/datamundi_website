@@ -1,16 +1,14 @@
 ---
-titulo: "Transparência algorítmica: o que as plataformas (não) divulgam"
-autor: "Amanda Lopes"
-date: 2026-02-20
-resumo: "Uma avaliação do quanto as grandes plataformas realmente revelam sobre seus sistemas de recomendação — e do que permanece opaco."
+titulo: O Boletim DataMundi está no ar!
+autor: Thales Leonardo de Carvalho
+date: 2026-07-10
+resumo: Nasce o Boletim DataMundi!
 imagem: ""
 ---
-Sistemas de recomendação moldam boa parte do que vemos online, mas o funcionamento interno dessas engrenagens permanece, em grande medida, opaco. Neste texto, avaliamos o que as principais plataformas divulgam publicamente sobre seus algoritmos.
+# O Boletim DataMundi está no ar
 
-## Um retrato da opacidade
+Bem-vindos(as) ao **Boletim DataMundi**, a publicação digital do Laboratório de Ciência de Dados em Relações Internacionais (DataMundi). O Boletim consiste em um espaço para mostrar, em linguagem acessível, o que fazemos quando cruzamos Ciência de Dados e Relações Internacionais — e para abrir esse trabalho a quem quiser acompanhar, aprender e discutir método conosco.
 
-Ao comparar relatórios de transparência, documentação técnica e políticas públicas, encontramos grandes lacunas. Boa parte das informações divulgadas é genérica e não permite avaliar de forma independente como o conteúdo é ordenado e priorizado.
+O Boletim DataMundi é uma publicação de divulgação científica em fluxo contínuo, com dois números por ano. A ideia é simples: traduzir as análises produzidas no âmbito do DataMundi em textos voltados ao público geral, não especializado em Relações Internacionais ou Ciência de Dados. Cada edição reúne análises empíricas quantitativas, com o cuidado de deixar claro de onde vêm os números e como chegamos a eles. Sempre que possível, os leitores encontrarão os dados abertos e os painéis interativos por trás de cada texto, para explorar por conta própria.
 
-## Caminhos possíveis
-
-Defendemos a construção de indicadores padronizados de transparência, que permitam comparar plataformas ao longo do tempo e cobrar avanços concretos. Sem métricas comuns, a discussão sobre responsabilização algorítmica segue limitada.
+A partir daqui, nossas próximas publicações trarão as análises, sempre assinadas pela nossa equipe. Se você se interessa por dados, por política internacional ou pela interseção dos dois, vale voltar aqui, ou assinar a nossa newsletter!
