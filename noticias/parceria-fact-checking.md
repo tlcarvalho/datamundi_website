@@ -1,5 +1,5 @@
 ---
-titulo: Nasce o DataMundi, o laboratório de Ciência de Dados em Relações
+titulo: Nasce o DataMundi, o Laboratório de Ciência de Dados em Relações
   Internacionais da UERJ!
 tag: Publicação
 date: 2026-04-03
