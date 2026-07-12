@@ -1,16 +1,28 @@
 ---
-titulo: "DataMundi firma parceria com agência de fact-checking para análise automatizada"
-tag: "Parceria"
+titulo: Nasce o DataMundi, o laboratório de Ciência de Dados em Relações
+  Internacionais da UERJ!
+tag: Publicação
 date: 2026-04-03
-resumo: "Colaboração permitirá aplicar modelos de detecção de desinformação em fluxo contínuo de conteúdo das redes sociais."
-imagem: ""
+resumo: "O DataMundi é um laboratório de pesquisa vinculado ao Departamento de
+  Relações Internacionais da Universidade do Estado do Rio de Janeiro (UERJ).
+  Atuando na interseção entre Ciência de Dados, Ciências Sociais e Relações
+  Internacionais. "
+imagem: /assets/img/logo.png
 ---
-O DataMundi firmou uma parceria com uma agência de checagem de fatos para aplicar seus modelos de detecção de desinformação a um fluxo contínuo de conteúdo extraído das redes sociais.
+# **Sobre o Laboratório** 
 
-## Objetivo da parceria
+O DataMundi se dedica à utilização de técnicas computacionais avançadas para converter a crescente oferta de dados em conhecimento que possa ser utilizado na reflexão sobre a complexidade emergente das dinâmicas globais, analisando estatisticamente temáticas como a política externa e a segurança internacional.  
 
-A colaboração une a expertise metodológica do laboratório à experiência prática da agência na verificação de informações. O objetivo é acelerar a identificação de conteúdos potencialmente falsos e priorizar aqueles com maior alcance.
+A principal missão do grupo é analisar e conferir sentido aos dados no campo das Relações Internacionais, fortalecendo a capacidade da sociedade de compreender, visualizar e antecipar fenômenos sociais complexos. 
 
-## Ciência aberta
+A equipe é formada por pesquisadores em diferentes estágios da carreira acadêmica, composta atualmente por 23 pesquisadores, sendo 13 graduandos, 7 pós-graduandos e 3 professores. 
 
-Os resultados metodológicos da parceria serão documentados e publicados em acesso aberto, contribuindo para o avanço das pesquisas sobre integridade da informação no ambiente digital.
+# **Divulgação do DataMundi**
+
+A divulgação científica do projeto é realizada em seu site e em suas redes sociais: 
+
+**LinkedIn: <https://www.linkedin.com/company/datamundi-lab/>** 
+
+**Instagram: <https://www.instagram.com/datamundi.lab/>** 
+
+**Twitter: <https://x.com/datamundilab>**
