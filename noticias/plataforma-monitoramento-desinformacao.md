@@ -12,6 +12,8 @@ Com a temática "Mundos em reconfiguração, democracias em disputa" e o pano de
 
 Durante o encontro, o coordenador do DataMundi, Thales Carvalho, e o Pós-Doutorando, Vinicius Santos, apresentarão trabalhos e discutirão em uma mesa-redonda “As eleições de 2026 e seus possíveis impactos para a Política Externa Brasileira”, acompanhados de outros nomes importantes da Ciência Política brasileira. 
 
+As atividades do DataMundi no evento encontram-se abaixo.
+
 Para mais informações, acesse a página oficial do evento: [https://www.abcp2026.sinteseeventos.com.br/](https://www.abcp2026.sinteseeventos.com.br/trabalho/view?q=eyJwYXJhbXMiOiJ7XCJJRF9UUkFCQUxIT1wiOlwiMTY4NlwifSIsImgiOiJlYzY0MWFmZDEyYzZiNGJjYTkzODE2OTM3MjY2OTE5MCJ9)
 
 
