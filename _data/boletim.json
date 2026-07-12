@@ -48,5 +48,28 @@
     "Visualizações e infográficos",
     "Referências e fontes abertas",
     "Chamadas para pesquisa e colaboração"
-  ]
+  ],
+  "editorialSecao": "Expediente",
+  "corpoEditorial": {
+    "titulo": "Corpo editorial",
+    "membros": [
+      { "nome": "Thales Carvalho", "cargo": "Editor-chefe · Coordenador do DataMundi (UERJ)" },
+      { "nome": "Vinicius Santos", "cargo": "Editor executivo · Pós-doutorando (UERJ)" },
+      { "nome": "Nome do(a) conselheiro(a)", "cargo": "Conselho editorial · Instituição" },
+      { "nome": "Nome do(a) conselheiro(a)", "cargo": "Conselho editorial · Instituição" }
+    ]
+  },
+  "normas": {
+    "titulo": "Normas de publicação",
+    "intro": "O Boletim DataMundi publica análises originais baseadas em dados sobre relações internacionais. As submissões seguem as normas abaixo.",
+    "itens": [
+      "Escopo: análises de política internacional, política externa e segurança fundamentadas em dados.",
+      "Formato: texto de 800 a 2.500 palavras, em linguagem acessível a não especialistas.",
+      "Idioma: português (resumos em inglês são bem-vindos).",
+      "Avaliação: cada texto passa por revisão editorial interna antes da publicação.",
+      "Referências e fontes de dados devem ser citadas e, quando possível, disponibilizadas em acesso aberto.",
+      "Direitos autorais: conteúdo sob licença Creative Commons (CC BY 4.0); os autores mantêm os direitos.",
+      "Submissões e contato: boletim@datamundi.org (ajuste para o e-mail oficial)."
+    ]
+  }
 }

@@ -4,6 +4,23 @@ nav_key: boletim
 titulo_pagina: Boletim
 permalink: /boletim/
 ---
+<style>
+  .bol-editorial { border-top: 1px solid var(--white-faint); margin-top: 60px; padding-top: 52px; }
+  .bol-editorial > .kicker { margin-bottom: 28px; }
+  .ed-cards { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 3vw, 36px); align-items: start; }
+  .ed-card { background: var(--teal-mid); border: 1px solid var(--white-faint); border-radius: 10px; padding: clamp(24px, 3vw, 34px); }
+  .ed-card h3 { font-family: var(--display); font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 20px; }
+  .ed-corpo { list-style: none; }
+  .ed-corpo li { padding: 14px 0; border-bottom: 1px solid var(--white-faint); }
+  .ed-corpo li:last-child { border-bottom: 0; }
+  .ed-corpo b { display: block; color: var(--white); font-size: 15px; font-weight: 600; margin-bottom: 3px; }
+  .ed-corpo span { display: block; font-family: var(--mono); font-size: 12px; color: var(--white-dim); letter-spacing: 0.02em; }
+  .ed-normas-intro { color: var(--white-dim); font-size: 15px; line-height: 1.7; margin-bottom: 18px; }
+  .ed-normas { list-style: none; counter-reset: norma; }
+  .ed-normas li { position: relative; padding: 0 0 13px 30px; font-size: 15px; line-height: 1.6; color: var(--white-dim); }
+  .ed-normas li::before { counter-increment: norma; content: counter(norma); position: absolute; left: 0; top: 1px; font-family: var(--mono); font-size: 12px; color: var(--neon); font-weight: 700; }
+  @media (max-width: 720px) { .ed-cards { grid-template-columns: 1fr; } }
+</style>
 <div class="page">
   <div class="wrap">
     <div class="kicker reveal in">{{ boletim.kicker }}</div>
@@ -71,6 +88,30 @@ permalink: /boletim/
           <div class="ok-ball">✓</div>
           <h2>{{ boletim.form.sucessoTitulo }}</h2>
           <p>{{ boletim.form.sucessoTexto }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Corpo editorial e normas (para solicitação de ISSN) -->
+    <div class="bol-editorial">
+      <div class="kicker reveal">{{ boletim.editorialSecao }}</div>
+      <div class="ed-cards">
+        <div class="ed-card reveal">
+          <h3>{{ boletim.corpoEditorial.titulo }}</h3>
+          <ul class="ed-corpo">
+            {% for m in boletim.corpoEditorial.membros %}
+              <li><b>{{ m.nome }}</b><span>{{ m.cargo }}</span></li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="ed-card reveal" style="transition-delay: 80ms">
+          <h3>{{ boletim.normas.titulo }}</h3>
+          {% if boletim.normas.intro %}<p class="ed-normas-intro">{{ boletim.normas.intro }}</p>{% endif %}
+          <ol class="ed-normas">
+            {% for item in boletim.normas.itens %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          </ol>
         </div>
       </div>
     </div>

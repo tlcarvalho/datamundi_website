@@ -72,8 +72,8 @@ permalink: /
     </div>
     {% set statsNumeros = [
       equipe.grupos | sumMembros,
-      publicacoes.lista.length + collections.relatorio.length,
-      linhas.lista.length
+      (publicacoes.lista | length) + (collections.relatorio | length),
+      linhas.lista | length
     ] %}
     <div class="stats-row">
       {% for s in home.estatisticas %}
@@ -132,16 +132,24 @@ permalink: /
     <div>
       {% for p in publicacoes.lista %}
         {% if loop.index <= 3 %}
-          <div class="reveal" style="transition-delay: {{ loop.index0 * 60 }}ms">
-            <div class="pubrow light">
+          {% if p.doi %}
+            <a class="reveal pubrow light" href="https://doi.org/{{ p.doi | replace('https://doi.org/', '') | replace('http://doi.org/', '') | trim }}" target="_blank" rel="noopener" style="transition-delay: {{ loop.index0 * 60 }}ms">
               <span class="pub-tipo">{{ p.tipo }}</span>
               <div class="pub-body">
                 <h3>{{ p.titulo }}</h3>
                 <div class="pub-meta">{{ p.autores }} · <em>{{ p.revista }}</em> · {{ p.ano }}</div>
               </div>
-              <span class="pub-doi">{% if p.doi %}DOI →{% endif %}</span>
+              <span class="pub-doi">DOI →</span>
+            </a>
+          {% else %}
+            <div class="reveal pubrow light" style="transition-delay: {{ loop.index0 * 60 }}ms">
+              <span class="pub-tipo">{{ p.tipo }}</span>
+              <div class="pub-body">
+                <h3>{{ p.titulo }}</h3>
+                <div class="pub-meta">{{ p.autores }} · <em>{{ p.revista }}</em> · {{ p.ano }}</div>
+              </div>
             </div>
-          </div>
+          {% endif %}
         {% endif %}
       {% endfor %}
     </div>
