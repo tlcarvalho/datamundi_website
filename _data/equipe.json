@@ -5,9 +5,20 @@
       "rotulo": "Professores",
       "grande": true,
       "membros": [
-        { "nome": "Thales Carvalho", "cargo": "Coordenador · Professor Adjunto" },
-        { "nome": "Vinicius Santos", "cargo": "Pós-Doutorando" },
-        { "nome": "Prof. Dr. Felipe Souza", "cargo": "Professor Colaborador" }
+        {
+          "nome": "Thales Carvalho",
+          "cargo": "Coordenador · Professor Adjunto",
+          "foto": "/assets/img/captura-de-tela-2026-07-11-111239.png"
+        },
+        {
+          "nome": "Vinicius Santos",
+          "cargo": "Pós-Doutorando",
+          "foto": "/assets/img/captura-de-tela-2026-07-11-111248.png"
+        },
+        {
+          "nome": "Prof. Dr. Felipe Souza",
+          "cargo": "Professor Colaborador"
+        }
       ]
     },
     {
@@ -15,13 +26,41 @@
       "rotulo": "Pós-graduandos",
       "grande": false,
       "membros": [
-        { "nome": "Alanna Itajahy", "cargo": "Doutoranda" },
-        { "nome": "Amanda Lopes", "cargo": "Doutoranda" },
-        { "nome": "Artur Boya", "cargo": "Doutoranda" },
-        { "nome": "Thaísa Viana", "cargo": "Doutoranda" },
-        { "nome": "Stephanie Braun Clemente", "cargo": "Doutoranda" },
-        { "nome": "Thayane Queiroz", "cargo": "Doutoranda" },
-        { "nome": "João Lucas Nogueira", "cargo": "Mestrando" }
+        {
+          "nome": "Alanna Itajahy",
+          "cargo": "Doutoranda",
+          "foto": "/assets/img/captura-de-tela-2026-07-11-111041.png"
+        },
+        {
+          "nome": "Amanda Lopes",
+          "cargo": "Doutoranda",
+          "foto": "/assets/img/captura-de-tela-2026-07-11-111202.png"
+        },
+        {
+          "nome": "Artur Boya",
+          "cargo": "Doutoranda",
+          "foto": "/assets/img/captura-de-tela-2026-07-11-111018.png"
+        },
+        {
+          "nome": "Thaísa Viana",
+          "cargo": "Doutoranda",
+          "foto": "/assets/img/captura-de-tela-2026-07-11-111156.png"
+        },
+        {
+          "nome": "Stephanie Braun Clemente",
+          "cargo": "Doutoranda",
+          "foto": "/assets/img/captura-de-tela-2026-07-11-111212.png"
+        },
+        {
+          "nome": "Thayane Queiroz",
+          "cargo": "Doutoranda",
+          "foto": "/assets/img/fotothayane.jpeg"
+        },
+        {
+          "nome": "João Lucas Nogueira",
+          "cargo": "Mestrando",
+          "foto": "/assets/img/fotojoaolucas.jpeg"
+        }
       ]
     },
     {
@@ -29,19 +68,71 @@
       "rotulo": "Graduandos",
       "grande": false,
       "membros": [
-        { "nome": "Bárbara Nogueira", "cargo": "Graduanda" },
-        { "nome": "Bernardo Siqueira", "cargo": "Graduando" },
-        { "nome": "Carlos Fernandes", "cargo": "Graduando" },
-        { "nome": "Flávia Beatriz", "cargo": "Graduanda" },
-        { "nome": "Igor Abreu", "cargo": "Graduando" },
-        { "nome": "Israel Neres", "cargo": "Graduando" },
-        { "nome": "João Sandman", "cargo": "Graduando" },
-        { "nome": "Júlia Lameiras", "cargo": "Graduanda" },
-        { "nome": "Laurent Auburtin", "cargo": "Graduando" },
-        { "nome": "Maria Eduarda Oliveira", "cargo": "Graduanda" },
-        { "nome": "Maria Luisa Serra", "cargo": "Graduanda" },
-        { "nome": "Rafael Lima", "cargo": "Graduando" },
-        { "nome": "Sophia Ribeiro", "cargo": "Graduanda" }
+        {
+          "nome": "Bárbara Nogueira",
+          "cargo": "Graduanda",
+          "foto": "/assets/img/captura-de-tela-2026-07-11-110546.png"
+        },
+        {
+          "nome": "Bernardo Siqueira",
+          "cargo": "Graduando",
+          "foto": "/assets/img/captura-de-tela-2026-07-11-110146.png"
+        },
+        {
+          "nome": "Carlos Fernandes",
+          "cargo": "Graduando",
+          "foto": "/assets/img/fotocadu.jpeg"
+        },
+        {
+          "nome": "Flávia Beatriz",
+          "cargo": "Graduanda",
+          "foto": "/assets/img/captura-de-tela-2026-07-11-110554.png"
+        },
+        {
+          "nome": "Igor Abreu",
+          "cargo": "Graduando",
+          "foto": "/assets/img/captura-de-tela-2026-07-11-110601.png"
+        },
+        {
+          "nome": "Israel Neres",
+          "cargo": "Graduando",
+          "foto": "/assets/img/captura-de-tela-2026-07-11-110528.png"
+        },
+        {
+          "nome": "João Sandman",
+          "cargo": "Graduando",
+          "foto": "/assets/img/captura-de-tela-2026-07-11-110536.png"
+        },
+        {
+          "nome": "Júlia Lameiras",
+          "cargo": "Graduanda",
+          "foto": "/assets/img/captura-de-tela-2026-07-11-110503.png"
+        },
+        {
+          "nome": "Laurent Auburtin",
+          "cargo": "Graduando",
+          "foto": "/assets/img/captura-de-tela-2026-07-11-110521.png"
+        },
+        {
+          "nome": "Maria Eduarda Oliveira",
+          "cargo": "Graduanda",
+          "foto": "/assets/img/fotodeperfil.jpg"
+        },
+        {
+          "nome": "Maria Luisa Serra",
+          "cargo": "Graduanda",
+          "foto": "/assets/img/captura-de-tela-2026-07-11-110511.png"
+        },
+        {
+          "nome": "Rafael Lima",
+          "cargo": "Graduando",
+          "foto": "/assets/img/captura-de-tela-2026-07-11-110020.png"
+        },
+        {
+          "nome": "Sophia Ribeiro",
+          "cargo": "Graduanda",
+          "foto": "/assets/img/captura-de-tela-2026-07-11-110610.png"
+        }
       ]
     }
   ]
