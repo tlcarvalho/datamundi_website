@@ -5,7 +5,7 @@
       "explicam",
       "o mundo."
     ],
-    "subtitulo": "O DataMundi é um laboratório de pesquisa une <strong>Ciência de Dados</strong> e <strong>Relações Internacionais</strong> para compreender a política internacional e seus diversos temas, como política externa e segurança.",
+    "subtitulo": "O DataMundi é um laboratório de pesquisa que une <strong>Ciência de Dados</strong> e <strong>Relações Internacionais</strong> para compreender a política internacional e seus diversos temas, como política externa e segurança.",
     "ctaPrimario": {
       "texto": "Conheça o laboratório",
       "url": "/quem-somos/"
@@ -32,7 +32,7 @@
       {
         "sigla": "CD",
         "titulo": "Ciência de Dados",
-        "descricao": "Coleta, modelagem e visualização em larga escala: processamento de linguagem natural, análise de redes e estatística inferencial aplicados a dados sobre a política no nosso mundo.."
+        "descricao": "Coleta, modelagem e visualização em larga escala: processamento de linguagem natural, análise de redes e estatística inferencial aplicados a dados sobre a política no nosso mundo."
       },
       {
         "sigla": "RI",
