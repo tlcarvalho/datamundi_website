@@ -54,22 +54,22 @@
     "titulo": "Corpo editorial",
     "membros": [
       { "nome": "Thales Carvalho", "cargo": "Editor-chefe · Coordenador do DataMundi (UERJ)" },
-      { "nome": "Vinicius Santos", "cargo": "Editor executivo · Pós-doutorando (UERJ)" },
-      { "nome": "Nome do(a) conselheiro(a)", "cargo": "Conselho editorial · Instituição" },
+      { "nome": "Vinicius Santos", "cargo": "Corpo editorial · Pós-doutorando (UERJ)" },
+      { "nome": "Alana Camoça", "cargo": "Conselho editorial · Professora (UERJ)" },
       { "nome": "Nome do(a) conselheiro(a)", "cargo": "Conselho editorial · Instituição" }
     ]
   },
   "normas": {
     "titulo": "Normas de publicação",
-    "intro": "O Boletim DataMundi publica análises originais baseadas em dados sobre relações internacionais. As submissões seguem as normas abaixo.",
+    "intro": "O Boletim DataMundi publica análises originais baseadas em dados sobre Relações Internacionais. As submissões seguem as normas abaixo.",
     "itens": [
-      "Escopo: análises de política internacional, política externa e segurança fundamentadas em dados.",
-      "Formato: texto de 800 a 2.500 palavras, em linguagem acessível a não especialistas.",
-      "Idioma: português (resumos em inglês são bem-vindos).",
+      "Escopo: análises de política internacional ou política externa fundamentadas em dados empíricos quantitativos.",
+      "Formato: texto de 800 a 1.000 palavras (excluindo título, resumo e referências), em linguagem acessível a não especialistas.",
+      "Idioma: português, inglês ou espanhol.",
       "Avaliação: cada texto passa por revisão editorial interna antes da publicação.",
-      "Referências e fontes de dados devem ser citadas e, quando possível, disponibilizadas em acesso aberto.",
+      "Referências e fontes de dados devem ser citadas em formato ABNT.",
       "Direitos autorais: conteúdo sob licença Creative Commons (CC BY 4.0); os autores mantêm os direitos.",
-      "Submissões e contato: boletim@datamundi.org (ajuste para o e-mail oficial)."
+      "Submissões e contato: datamundi.lab@gmail.com"
     ]
   }
 }
