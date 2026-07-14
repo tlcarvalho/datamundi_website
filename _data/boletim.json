@@ -51,12 +51,21 @@
   ],
   "editorialSecao": "Expediente",
   "corpoEditorial": {
-    "titulo": "Corpo editorial",
+    "titulo": "Editores",
     "membros": [
       { "nome": "Thales Carvalho", "cargo": "Editor-chefe · Coordenador do DataMundi (UERJ)" },
-      { "nome": "Vinicius Santos", "cargo": "Corpo editorial · Pós-doutorando (UERJ)" },
-      { "nome": "Alana Camoça", "cargo": "Conselho editorial · Professora (UERJ)" },
-      { "nome": "Nome do(a) conselheiro(a)", "cargo": "Conselho editorial · Instituição" }
+      { "nome": "Amanda Lopes", "cargo": "Editoria Executiva · Doutoranda (UERJ)" }
+      { "nome": "Vinicius Santos", "cargo": "Conselho editorial · Pós-doutorando (UERJ)" },
+      { "nome": "Alana Camoça", "cargo": "Conselho editorial · Professora (UERJ)" }
+    ]
+  },
+"conselho": {
+    "titulo": "Conselho Editorial",
+    "membros": [
+      { "nome": "Thales Carvalho", "cargo": "Editor-chefe · Coordenador do DataMundi (UERJ)" },
+      { "nome": "Amanda Lopes", "cargo": "Editoria Executiva · Doutoranda (UERJ)" }
+      { "nome": "Vinicius Santos", "cargo": "Conselho editorial · Pós-doutorando (UERJ)" },
+      { "nome": "Alana Camoça", "cargo": "Conselho editorial · Professora (UERJ)" }
     ]
   },
   "normas": {
