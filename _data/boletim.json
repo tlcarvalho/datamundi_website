@@ -57,17 +57,15 @@
       { "nome": "Amanda Lopes", "cargo": "Editoria Executiva · Doutoranda (UERJ)" },
       { "nome": "Vinicius Santos", "cargo": "Conselho editorial · Pós-doutorando (UERJ)" },
       { "nome": "Alana Camoça", "cargo": "Conselho editorial · Professora (UERJ)" }
-    ]
-  },
-  "Conselho": {
-    "titulo": "Conselho Editorial",
+    ],
+"titulo": "Conselho Editorial",
     "membros": [
       { "nome": "Thales Carvalho", "cargo": "Editor-chefe · Coordenador do DataMundi (UERJ)" },
       { "nome": "Amanda Lopes", "cargo": "Editoria Executiva · Doutoranda (UERJ)" },
       { "nome": "Vinicius Santos", "cargo": "Conselho editorial · Pós-doutorando (UERJ)" },
       { "nome": "Alana Camoça", "cargo": "Conselho editorial · Professora (UERJ)" }
-    ]
   },
+
   "normas": {
     "titulo": "Normas de publicação",
     "intro": "O Boletim DataMundi publica análises originais baseadas em dados sobre Relações Internacionais. As submissões seguem as normas abaixo.",
