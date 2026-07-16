@@ -5,7 +5,7 @@ tag: Evento
 date: 2026-07-12
 resumo: Pesquisadores do DataMundi farão 4 apresentações no Encontro da ABCP, em
   Belém, em julho!
-imagem: /assets/img/capa.png
+imagem: /assets/img/capa1.png
 ---
 O Laboratório de Ciência de Dados em Relações Internacionais (DataMundi) da UERJ estará presente no 15° encontro da ABCP, que reunirá pesquisadores de todo o país entre os dias 30 e 31 de julho (remoto) e 3 a 6 de agosto de 2026 (etapa presencial), na Universidade Federal do Pará (UFPA), em Belém. Sob o assunto geral "Mundos em reconfiguração, democracias em disputa: 40 anos depois", o evento reunirá Áreas Temáticas, Mesas-Redondas, Fóruns das Regionais, Minicursos, Sessões Especiais e Conferências.
 
@@ -17,6 +17,6 @@ As atividades do DataMundi no evento encontram-se abaixo.
 
 Para mais informações, acesse a página oficial do evento: https://www.abcp2026.sinteseeventos.com.br/
 
-![](/assets/img/mesa-redonda.png)
+![](/assets/img/mesa-redonda1.png)
 
-![](/assets/img/apresentações-de-artigos.png)
+![](/assets/img/apresentações-de-artigos1.png)
