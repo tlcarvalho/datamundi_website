@@ -17,8 +17,6 @@ As atividades do DataMundi no evento encontram-se abaixo.
 
 Para mais informações, acesse a página oficial do evento: https://www.abcp2026.sinteseeventos.com.br/
 
-
-
 ![](/assets/img/mesa-redonda.png)
 
 ![](/assets/img/apresentações-de-artigos.png)
