@@ -86,6 +86,14 @@
       "revista": "Revista Dados",
       "ano": "2025",
       "doi": "https://doi.org/10.1590/dados.2025.68.3.383"
+    },
+    {
+      "tipo": "Artigo",
+      "titulo": "senatebR: Collecting Data from the Brazilian Federal Senate",
+      "autores": "Vinicius Santos",
+      "revista": "Revista Dados",
+      "ano": "2026",
+      "doi": "https://doi.org/10.1590/dados.2026.69.1.005 "
     }
   ]
 }
