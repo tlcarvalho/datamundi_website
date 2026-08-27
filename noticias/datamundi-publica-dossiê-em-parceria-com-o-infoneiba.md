@@ -5,7 +5,7 @@ date: 2026-08-08
 resumo: "A primeira parceria entre o Jornal InfoNEIBA e o DataMundi reuniu um
   dossiê de três artigos dos integrantes do laboratório relacionando dados com
   comércio, defesa e opinião pública. "
-imagem: ""
+imagem: /assets/img/captura-de-tela-2026-08-26-222007.png
 ---
 O **Laboratório de Ciência de Dados em Relações Internacionais (DataMundi)**, vinculado ao Departamento de Relações Internacionais da UERJ, acaba de lançar seu primeiro dossiê em parceria com o InfoNEIBA. A publicação reúne três artigos realizados por estudantes de graduação, integrantes do DataMundi.
 
